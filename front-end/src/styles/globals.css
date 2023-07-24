@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-lato: Lato;
+  --font-roboto: Roboto;
+
+  /* font sizes */
+  --font-size-lg: 18px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-darkslateblue: #5f4b98;
+  --color-steelblue: #8c7db7;
+
+  /* border radiuses */
+  --br-3xs: 10px;
+}
