@@ -1,6 +1,6 @@
 import { useCallback } from "react";
-import styles from ".login.css";
-const login_scr = () => {
+import styles from ".Login.css";
+const Login_scr = () => {
   const onDontHaveAnClick = useCallback(() => {
     // Please sync "sign up page" to the project
   }, []);
