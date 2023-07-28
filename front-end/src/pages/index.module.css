@@ -2,47 +2,38 @@
     position: relative;
     font-weight: 500;
   }
-  .battWifiSignal {
-    position: relative;
-    width: 50px;
-    height: 14px;
-  }
-  .statusBar {
-    position: absolute;
-    top: 18px;
-    left: calc(50% - 164px);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 222px;
-    font-family: var(--font-roboto);
-  }
+
   .logIn {
-    position: absolute;
-    top: 13px;
-    left: 104px;
+
     font-weight: 600;
+    justify-content: center;
   }
+  
   .logInButton {
     position: absolute;
     top: 467px;
     left: 46px;
     border-radius: var(--br-3xs);
-    background-color: var(--color-darkslateblue);
-    border: 1px solid var(--color-darkslateblue);
+    background-color: var(--color-darkslateblue); /* Change the color to your desired background color */
+    border: 1px solid var(--color-darkslateblue); /* Change the color to your desired border color */
     box-sizing: border-box;
     width: 268px;
     height: 51px;
     overflow: hidden;
-    font-size: 22px;
-    color: var(--color-white);
+    font-size: 24px;
+    color: #fff; /* Change the color to your desired text color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
   }
+
   .email {
     position: absolute;
     top: 15px;
     left: 15px;
   }
+
   .emailFieldFrame {
     top: 0;
     left: 0;
@@ -51,13 +42,23 @@
     box-sizing: border-box;
     width: 268px;
     height: 51px;
+    place-items: center; /* Center items both horizontally and vertically */
+    /* Add other container styles as needed */
+    display: grid; /* Use CSS Grid for more precise centering */
   }
+
   .emailFieldFrame,
   .passwordFieldFrame,
   .vectorIcon {
     position: absolute;
     overflow: hidden;
   }
+
+  .email {
+    font-size: large;
+    justify-content: center;
+  }
+
   .vectorIcon {
     height: 31.58%;
     width: 7.46%;
@@ -77,6 +78,17 @@
     width: 268px;
     height: 51px;
   }
+
+  .eyeIcon {
+    position: absolute;
+    top: 18px;
+    right: 12px;
+    width: 20px; /* Set the width and height for the eye icon */
+    height: 16px;
+    cursor: pointer;
+    align-self: center;
+  }
+
   .forgotYourPassword {
     position: absolute;
     top: 136px;
@@ -84,10 +96,12 @@
     font-size: 12px;
     color: var(--color-steelblue);
   }
+
   .forgotYourPassword,
   .here {
     text-decoration: underline;
   }
+
   .dontHaveAnContainer {
     position: absolute;
     top: 268px;
@@ -99,6 +113,7 @@
     width: 188px;
     cursor: pointer;
   }
+
   .textBoxes {
     position: absolute;
     top: 260px;
@@ -107,12 +122,14 @@
     height: 306px;
     font-size: var(--font-size-lg);
   }
+
   .logIn1 {
     position: absolute;
     top: 172px;
     left: calc(50% - 64px);
     font-size: 40px;
   }
+
   .logInScreen {
     position: relative;
     border-radius: 30px;
@@ -126,4 +143,8 @@
     font-size: 14px;
     color: var(--color-darkslateblue);
     font-family: var(--font-lato);
+    display: grid; /* Use CSS Grid for more precise centering */
+    place-items: center; /* Center items both horizontally and vertically */
+    /* Add other container styles as needed */;
+
   }

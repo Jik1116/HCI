@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import Link from "next/link"; // Import Link from next/link
 import styles from "./index.module.css";
+
 const LogInScreen = () => {
   const onDontHaveAnClick = useCallback(() => {
     // Please sync "sign up page" to the project
@@ -8,13 +9,7 @@ const LogInScreen = () => {
 
   return (
     <div className={styles.logInScreen}>
-      <div className={styles.statusBar}>
-        <img
-          className={styles.battWifiSignal}
-          alt=""
-          src="/batt-wifi-signal.svg"
-        />
-      </div>
+
       <div className={styles.logInButton}>
         <div className={styles.logIn}>Log In</div>
       </div>
@@ -29,7 +24,7 @@ const LogInScreen = () => {
         <div className={styles.forgotYourPassword}>Forgot Your Password?</div>
         <div className={styles.dontHaveAnContainer} onClick={onDontHaveAnClick}>
           {`Don’t have an account yet? Create one `}
-          <Link href="/signup_scr" passHref>
+          <Link href="/1_signup" passHref>
           <span className={styles.here}>HERE</span>
         </Link>
         </div>
