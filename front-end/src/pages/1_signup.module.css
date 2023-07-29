@@ -162,7 +162,7 @@
   text-align: left;
   font-size: 14px;
   color: #000; /* Change the color to your desired text color */
-  font-family: Arial, sans-serif;
+  font-family: var(--font-lato);
   display: grid;
   place-items: center;
 }

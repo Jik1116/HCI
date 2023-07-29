@@ -11,7 +11,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    font-family: Arial, sans-serif;
+    font-family: var(--font-lato);
     position: relative;
     border-radius: 30px;
     background-color: #fff; /* Change the color to your desired background color */

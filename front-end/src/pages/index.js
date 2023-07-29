@@ -1,4 +1,6 @@
+/* index.js */
 import { useCallback, useRef, useState } from "react";
+import { useRouter } from "next/router"; // Import useRouter from next/router
 import Link from "next/link"; // Import Link from next/link
 import styles from "./index.module.css";
 
@@ -7,6 +9,7 @@ const LogInScreen = () => {
   const [password, setPassword] = useState(""); // State to store the password value
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
+  const router = useRouter(); // Initialize Next.js router
 
   const onDontHaveAnClick = useCallback(() => {
     // Please sync "sign up page" to the project
@@ -16,7 +19,10 @@ const LogInScreen = () => {
     // Use the 'email' and 'password' variables for login logic or API calls
     console.log("Email:", email);
     console.log("Password:", password);
-  }, [email, password]);
+
+    // Navigate to the 4_name page programmatically
+    router.push("/4_name");
+  }, [email, password, router]);
 
   const clearEmailText = () => {
     setEmail("");
@@ -33,7 +39,9 @@ const LogInScreen = () => {
   return (
     <div className={styles.logInScreen}>
       <div className={styles.logInButton}>
-        <div className={styles.logIn}>Log In</div>
+        <span className={styles.logIn} onClick={onLoginClick}>
+          Log In
+        </span>
       </div>
 
       <div className={styles.textBoxes}>
