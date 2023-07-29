@@ -34,7 +34,7 @@
 }
 
 .next {
-  font-weight: 600;
+  font-weight: 500;
   justify-content: center;
 }
 
@@ -63,6 +63,7 @@
   left: 15px;
   cursor: pointer;
 }
+
 .emailField {
   position: absolute;
   top: 260px;
@@ -74,12 +75,14 @@
   height: 51px;
   overflow: hidden;
 }
+
 .createAPassword,
 .vectorIcon {
   position: absolute;
   top: 15px;
   left: 15px;
 }
+
 .vectorIcon {
   height: 31.58%;
   width: 7.46%;

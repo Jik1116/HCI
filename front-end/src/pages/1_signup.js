@@ -20,6 +20,11 @@ const SignUpPage = () => {
     router.push("/");
   }, [router]);
 
+  const onNextButtonClick = useCallback(() => {
+    // Add logic here to handle data validation or API calls before navigating
+    router.push("/3_confirmsignup");
+  }, [router]);
+
   const clearEmailText = () => {
     setEmail(""); // Clear the email text
     emailRef.current.textContent = ""; // Clear the text inside the email container
@@ -39,7 +44,9 @@ const SignUpPage = () => {
   return (
     <div className={styles.signUpPage}>
       <div className={styles.nextWrapper}>
-        <div className={styles.next}>Next</div>
+        <div className={styles.next} onClick={onNextButtonClick}>
+          Next
+        </div>
       </div>
 
       <div
@@ -76,9 +83,9 @@ const SignUpPage = () => {
         />
       </div>
 
-      <Link href="/" passHref>
-        <b className={styles.signUp}>Sign Up</b>
-      </Link>
+      <b className={styles.signUp} onClick={onEnterAValidClick}>
+        Sign Up
+      </b>
       <img
         className={styles.backButtonIcon}
         alt="Back"
