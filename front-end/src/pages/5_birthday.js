@@ -31,7 +31,7 @@ const OnboardingBirthday = () => {
         src="/backarrow(white).png"
         onClick={onBackButtonIconClick}
       />
-      <Link href="/6_something_else"> {/* Replace "6_something_else" with the desired next page */}
+      <Link href="/6_gender"> {/* Replace "6_something_else" with the desired next page */}
         <div className={styles.nextButton}>
           <div className={styles.next}>Next</div>
           <img className={styles.vectorIcon} alt="" src="/nextarrow.png" />
