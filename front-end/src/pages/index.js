@@ -3,6 +3,7 @@ import { useCallback, useRef, useState } from "react";
 import { useRouter } from "next/router"; // Import useRouter from next/router
 import Link from "next/link"; // Import Link from next/link
 import styles from "./index.module.css";
+import 'animate.css';
 
 const LogInScreen = () => {
   const [email, setEmail] = useState(""); // State to store the email value
@@ -38,10 +39,10 @@ const LogInScreen = () => {
 
   return (
     <div className={styles.logInScreen}>
-      <div className={styles.logInButton}>
-        <span className={styles.logIn} onClick={onLoginClick}>
+      <div className={styles.logInButton} onClick={onLoginClick}>
+        <b className={styles.logIn} onClick={onLoginClick}>
           Log In
-        </span>
+        </b>
       </div>
 
       <div className={styles.textBoxes}>

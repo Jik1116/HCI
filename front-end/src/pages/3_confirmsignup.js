@@ -3,6 +3,7 @@ import { useCallback } from "react";
 import { useRouter } from "next/router";
 import styles from "./3_confirmsignup.module.css";
 import Link from "next/link"; // Import Link from next/link
+import 'animate.css';
 
 const SignUpPageWPasswordFilled = () => {
   const router = useRouter();

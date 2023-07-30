@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import { useRouter } from "next/router";
 import styles from "./8_sizechart.module.css";
+import 'animate.css';
 
 const OnboardingSizeChart = () => {
   const router = useRouter();

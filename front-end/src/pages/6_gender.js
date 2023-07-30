@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "./6_gender.module.css";
+import 'animate.css';
 
 const OnboardingBirthday = () => {
   const router = useRouter(); // Initialize the useRouter hook

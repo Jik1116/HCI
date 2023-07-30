@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import Link from "next/link"; // Import the Link component
 import { useRouter } from "next/router"; // Import the useRouter hook
 import styles from "./4_name.module.css";
+import 'animate.css';
 
 const OnboardingName = () => {
   const router = useRouter(); // Initialize the useRouter hook

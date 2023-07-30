@@ -2,7 +2,7 @@ import { useCallback, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import styles from "./1_signup.module.css";
 import Link from "next/link"; // Import Link from next/link
-
+import 'animate.css';
 const SignUpPage = () => {
   const router = useRouter();
   const [email, setEmail] = useState(""); // State to store the email value

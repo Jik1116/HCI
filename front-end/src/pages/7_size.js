@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 import { useRouter } from "next/router";
 import styles from "./7_size.module.css";
+import 'animate.css';
 
 const OnboardingSize = () => {
   const router = useRouter();
