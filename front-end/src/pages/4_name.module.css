@@ -14,7 +14,15 @@
     border: 10px solid #000; /* Change the color to your desired border color */
     box-sizing: border-box;
   }
-  
+  .textBoxes {
+    position: absolute;
+    top: 260px;
+    left: 46px;
+    width: 268px;
+    height: 306px;
+    font-size: var(--font-size-lg);
+  }
+
   .enterYourResponse {
     position: relative;
     color: #8c7db7;
@@ -28,7 +36,6 @@
     border-radius: var(--br-3xs);
     border: 2px solid var(--color-darkslateblue);
     overflow: hidden;
-    display: flex;
     flex-direction: row;
     padding: 20px;
     width: 240px;
@@ -45,9 +52,19 @@
     height: 64px;
     cursor: pointer;
     font-size: 20px;
-    text-align: center; /* Center the text inside the response box */
   }
 
+  .emailFieldFrame {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  border: 1px solid var(--color-darkslateblue);
+  box-sizing: border-box;
+  width: 268px;
+  height: 51px;
+  place-items: center;
+  display: grid;
+}
   
   
   .whatIsYour {

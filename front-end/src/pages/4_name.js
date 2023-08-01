@@ -28,9 +28,26 @@ const OnboardingName = () => {
   return (
     <div className={styles.onboardingName}>
       <div className={styles.responseBox} onClick={onResponseBoxContainerClick}>
-        <div className={styles.enterYourResponseHereWrapper}>
-          <i className={styles.enterYourResponse}>Enter Your Response Here</i>
-          
+      <div className={styles.enterYourResponseHereWrapper}>
+      <div
+          className={styles.enterYourResponse}
+          onClick={clearEmailText}
+          onFocus={clearEmailText}
+          onBlur={() => {
+            if (!email) {
+              emailRef.current.textContent = "Enter Your Name";
+            }
+          }}
+        >
+          <div
+            className={styles.email}
+            ref={emailRef}
+            contentEditable
+            onInput={(e) => setEmail(e.target.textContent.trim())}
+          >
+            {email ? email : "Enter Your Name"}
+          </div>
+          </div>
         </div>
       </div>
       <b className={styles.whatIsYour}>What is your name?</b>
