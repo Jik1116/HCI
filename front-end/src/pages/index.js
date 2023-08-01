@@ -39,11 +39,11 @@ const LogInScreen = () => {
 
   return (
     <div className={styles.logInScreen}>
-      <div className={styles.logInButton} onClick={onLoginClick}>
-        <b className={styles.logIn} onClick={onLoginClick}>
+      <b className={styles.logIn1}>
           Log In
         </b>
-      </div>
+      <span className={styles.logInButton} onClick={onLoginClick}>Log In 
+      </span>
 
       <div className={styles.textBoxes}>
         <div
@@ -94,9 +94,6 @@ const LogInScreen = () => {
         </div>
       </div>
 
-      <b className={styles.logIn1} onClick={onLoginClick}>
-        Log In
-      </b>
     </div>
   );
 };

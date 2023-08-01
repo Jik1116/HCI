@@ -1,10 +1,19 @@
-import { useCallback } from "react";
+
+import { useCallback, useRef, useState } from "react";
 import Link from "next/link"; // Import the Link component
 import { useRouter } from "next/router"; // Import the useRouter hook
 import styles from "./4_name.module.css";
 import 'animate.css';
 
 const OnboardingName = () => {
+  const [email, setEmail] = useState(""); // State to store the email value
+  const clearEmailText = () => {
+    setEmail("");
+    emailRef.current.textContent = "";
+    emailRef.current.focus();
+  };
+  const emailRef = useRef(null);
+
   const router = useRouter(); // Initialize the useRouter hook
 
   const onResponseBoxContainerClick = useCallback(() => {
@@ -13,7 +22,7 @@ const OnboardingName = () => {
 
   const onBackButtonIconClick = useCallback(() => {
     // Navigate to the "3_confirmsignup" page when the back button is clicked
-    router.push("/3_confirmsignup");
+    router.push("/");
   }, [router]);
 
   return (
@@ -21,6 +30,7 @@ const OnboardingName = () => {
       <div className={styles.responseBox} onClick={onResponseBoxContainerClick}>
         <div className={styles.enterYourResponseHereWrapper}>
           <i className={styles.enterYourResponse}>Enter Your Response Here</i>
+          
         </div>
       </div>
       <b className={styles.whatIsYour}>What is your name?</b>
@@ -38,6 +48,7 @@ const OnboardingName = () => {
           <div className={styles.next}>Next</div>
           <img className={styles.vectorIcon} alt="" src="/nextarrow.png" />
         </div>
+      
       </Link>
     </div>
   );

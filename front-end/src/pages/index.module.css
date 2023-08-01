@@ -31,6 +31,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  z-index: 9999;
 }
 
 .logInText {
@@ -123,4 +124,5 @@
   top: 172px;
   left: calc(50% - 64px);
   font-size: 40px;
+  cursor: pointer;
 }
