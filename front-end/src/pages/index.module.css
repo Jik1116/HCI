@@ -18,7 +18,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px;
-  background-color: white; /* Add your desired background color */
+  background-color: white;
+  margin-bottom: 20px;
 }
 .filterContainer {
   position: relative;
@@ -79,7 +80,7 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden; 
-  width: 200px;
+  width: 150px;
 }
 .pictureItem img {
   width: 100%;
