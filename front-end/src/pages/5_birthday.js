@@ -44,7 +44,7 @@ const OnboardingBirthday = () => {
             contentEditable
             onInput={(e) => setBirthday(e.target.textContent.trim())}
           >
-            {birthday ? birthday : "Enter Your Name"}
+            {birthday ? birthday : "Enter Your Birthday"}
           </div>
           </div>
         </div>
