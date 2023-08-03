@@ -1,103 +1,77 @@
-/* index.js */
-import { useCallback, useRef, useState } from "react";
-import { useRouter } from "next/router"; // Import useRouter from next/router
-import Link from "next/link"; // Import Link from next/link
-import styles from "./index.module.css";
+import { useCallback, useEffect, useState } from "react"; 
+import Link from "next/link";
+import styles from "./index.module.css"; 
 
-const LogInScreen = () => {
-  const [email, setEmail] = useState(""); // State to store the email value
-  const [password, setPassword] = useState(""); // State to store the password value
-  const emailRef = useRef(null);
-  const passwordRef = useRef(null);
-  const router = useRouter(); // Initialize Next.js router
+const HomePage = () => {
 
-  const onDontHaveAnClick = useCallback(() => {
-    // Please sync "sign up page" to the project
+  // Please include useCallback code when i navigate to the favorites page when the favorites icon is clicked 
+
+
+  // Sample data for pictures (replace this with data fetched from the backend)
+  const [pictures, setPictures] = useState([]);
+  useEffect(() => {
+    // Fetch pictures from the backend here and update the state with the data
+    // For example:
+    // const fetchedPictures = await fetchPicturesFromBackend();
+    // setPictures(fetchedPictures);
+    // Replace the empty array above with the fetchedPictures array 
+
+    // For demonstration purposes, assume we fetched an array of pictures
+    const fetchedPictures = [
+      { id: 1, url: "/zone.jpg" },
+      { id: 2, url: "/ztwo.jpg" },
+      { id: 3, url: "/zthree.jpg" },
+      { id: 4, url: "/zfour.jpg" },
+      { id: 5, url: "/zfive.jpg" },
+      { id: 6, url: "/zsix.jpg" },
+      { id: 7, url: "/zseven.jpg" },
+      { id: 8, url: "/zeight.jpg" },
+    ];
+    // Update the pictures state with the fetched data
+    setPictures(fetchedPictures);
   }, []);
 
-  const onLoginClick = useCallback(() => {
-    // Use the 'email' and 'password' variables for login logic or API calls
-    console.log("Email:", email);
-    console.log("Password:", password);
-
-    // Navigate to the 4_name page programmatically
-    router.push("/4_name");
-  }, [email, password, router]);
-
-  const clearEmailText = () => {
-    setEmail("");
-    emailRef.current.textContent = "";
-    emailRef.current.focus();
-  };
-
-  const clearPasswordText = () => {
-    setPassword("");
-    passwordRef.current.textContent = "";
-    passwordRef.current.focus();
-  };
 
   return (
-    <div className={styles.logInScreen}>
-      <div className={styles.logInButton}>
-        <span className={styles.logIn} onClick={onLoginClick}>
-          Log In
-        </span>
-      </div>
+    <div className={styles.homePage}> 
 
-      <div className={styles.textBoxes}>
-        <div
-          className={styles.emailFieldFrame}
-          onClick={clearEmailText}
-          onFocus={clearEmailText}
-          onBlur={() => {
-            if (!email) {
-              emailRef.current.textContent = "Enter A Valid Email";
-            }
-          }}
-        >
-          <div
-            className={styles.email}
-            ref={emailRef}
-            contentEditable
-            onInput={(e) => setEmail(e.target.textContent.trim())}
-          >
-            {email ? email : "Enter A Valid Email"}
-          </div>
-        </div>
-        <div
-          className={styles.passwordFieldFrame}
-          onClick={clearPasswordText}
-          onFocus={clearPasswordText}
-          onBlur={() => {
-            if (!password) {
-              passwordRef.current.textContent = "Create A Password";
-            }
-          }}
-        >
-          <img className={styles.vectorIcon} alt="" src="/vector.svg" />
-          <div
-            className={styles.email}
-            ref={passwordRef}
-            contentEditable
-            onInput={(e) => setPassword(e.target.textContent.trim())}
-          >
-            {password ? password : "Create A Password"}
-          </div>
-        </div>
-        <div className={styles.forgotYourPassword}>Forgot Your Password?</div>
-        <div className={styles.dontHaveAnContainer} onClick={onDontHaveAnClick}>
-          {`Don’t have an account yet? Create one `}
-          <Link href="/1_signup" passHref>
-            <span className={styles.here}>HERE</span>
-          </Link>
-        </div>
-      </div>
+      {/* Top bar */}
+      <div className={styles.topBar}> 
 
-      <b className={styles.logIn1} onClick={onLoginClick}>
-        Log In
-      </b>
-    </div>
-  );
-};
+        <div className={styles.filterContainer}>
+          <img className={styles.filterIcon} src="/filtericon.jpg" alt="Filter" /> 
+        </div> 
 
-export default LogInScreen;
+        <div className={styles.latestParent}>
+          <div className={styles.latest}>Latest</div> 
+          <img className={styles.vectorIcon} alt="" src="/latesticon.jpg" />
+        </div>
+
+        <div className={styles.favoritesContainer}>
+          <img className={styles.favoritesIcon} src="/favoritesicon.jpg" alt="Favorites" />
+        </div>
+      </div> 
+
+
+
+      {/* Picture gallery */} 
+   
+        <div className={styles.pictureGallery}>
+          {pictures.map((picture) => (
+            <div key={picture.id} className={styles.pictureItem}>
+              {/* Display your pictures here */}
+              <img key={picture.id} src={picture.url} alt={`Picture ${picture.id}`} />
+            </div>
+          ))}
+        </div>
+      </div> 
+
+    );
+  };
+
+
+
+export default HomePage;
+
+
+

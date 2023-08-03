@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap");
+
 body {
   margin: 0;
   line-height: normal;
@@ -11,6 +12,7 @@ body {
 
   /* font sizes */
   --font-size-lg: 18px;
+  --font-size-3xs: 10px;
 
   /* Colors */
   --color-white: #fff;
