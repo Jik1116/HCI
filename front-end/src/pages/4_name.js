@@ -6,13 +6,13 @@ import styles from "./4_name.module.css";
 import 'animate.css';
 
 const OnboardingName = () => {
-  const [email, setEmail] = useState(""); // State to store the email value
-  const clearEmailText = () => {
-    setEmail("");
-    emailRef.current.textContent = "";
-    emailRef.current.focus();
+  const [name, setName] = useState(""); // State to store the email value
+  const clearNameText = () => {
+    setName("");
+    nameRef.current.textContent = "";
+    nameRef.current.focus();
   };
-  const emailRef = useRef(null);
+  const nameRef = useRef(null);
 
   const router = useRouter(); // Initialize the useRouter hook
 
@@ -31,21 +31,20 @@ const OnboardingName = () => {
       <div className={styles.enterYourResponseHereWrapper}>
       <div
           className={styles.enterYourResponse}
-          onClick={clearEmailText}
-          onFocus={clearEmailText}
+          onClick={clearNameText}
+          onFocus={clearNameText}
           onBlur={() => {
-            if (!email) {
-              emailRef.current.textContent = "Enter Your Name";
+            if (!name) {
+              nameRef.current.textContent = "Enter Your Name";
             }
           }}
         >
           <div
-            className={styles.email}
-            ref={emailRef}
+            ref={nameRef}
             contentEditable
-            onInput={(e) => setEmail(e.target.textContent.trim())}
+            onInput={(e) => setName(e.target.textContent.trim())}
           >
-            {email ? email : "Enter Your Name"}
+            {name ? name : "Enter Your Name"}
           </div>
           </div>
         </div>

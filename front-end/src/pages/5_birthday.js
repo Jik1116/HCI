@@ -1,10 +1,19 @@
-import { useCallback } from "react";
+import { useCallback,useState,useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router"; // Import the useRouter hook
 import styles from "./5_birthday.module.css";
 import 'animate.css';
 
 const OnboardingBirthday = () => {
+
+  const [birthday, setBirthday] = useState(""); // State to store the email value
+  const clearBirthdayText = () => {
+    setBirthday("");
+    birthdayRef.current.textContent = "";
+    birthdayRef.current.focus();
+  };
+  const birthdayRef = useRef(null);
+
   const router = useRouter(); // Initialize the useRouter hook
 
   const onResponseBoxContainerClick = useCallback(() => {
@@ -20,7 +29,24 @@ const OnboardingBirthday = () => {
     <div className={styles.onboardingName}>
       <div className={styles.responseBox} onClick={onResponseBoxContainerClick}>
         <div className={styles.enterYourResponseHereWrapper}>
-          <i className={styles.enterYourResponse}>Enter Your Response Here</i>
+      <div
+          className={styles.enterYourResponse}
+          onClick={clearBirthdayText}
+          onFocus={clearBirthdayText}
+          onBlur={() => {
+            if (!birthday) {
+              birthdayRef.current.textContent = "Enter Your Birthday";
+            }
+          }}
+        >
+          <div
+            ref={birthdayRef}
+            contentEditable
+            onInput={(e) => setBirthday(e.target.textContent.trim())}
+          >
+            {birthday ? birthday : "Enter Your Name"}
+          </div>
+          </div>
         </div>
       </div>
       <b className={styles.whatIsYour}>What is your birthday?</b>
