@@ -4,86 +4,68 @@ import { useRouter } from "next/router"; // Import useRouter from next/router
 import Link from "next/link"; // Import Link from next/link
 import styles from "./index.module.css";
 import 'animate.css';
+import {auth} from '../../../back-end/firebase';
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const LogInScreen = () => {
   const [email, setEmail] = useState(""); // State to store the email value
   const [password, setPassword] = useState(""); // State to store the password value
-  const emailRef = useRef(null);
-  const passwordRef = useRef(null);
+  // const emailRef = useRef(null);
+  // const passwordRef = useRef(null);
   const router = useRouter(); // Initialize Next.js router
-
   const onDontHaveAnClick = useCallback(() => {
     // Please sync "sign up page" to the project
   }, []);
 
-  const onLoginClick = useCallback(() => {
-    // Use the 'email' and 'password' variables for login logic or API calls
-    console.log("Email:", email);
-    console.log("Password:", password);
+  //Need to add ERROR HANDELING
+  const onLoginClick = useCallback(async () => {
+    try {
+      // Use the 'email' and 'password' variables for login logic or API calls
+      console.log('Email:', email);
+      console.log('Password:', password);
+      console.log(auth)
+      await signInWithEmailAndPassword(auth, email, password);
+      //Add error message
 
-    // Navigate to the 4_name page programmatically
-    router.push("/4_name");
+      // User has successfully signed in
+      // You can redirect the user to the dashboard or another page here
+      router.push('/11_homepage');
+    } catch (error) {
+      alert("ERROR SINGING: MY VOICE IS GREAT!")
+      console.error('Error signing in:', error.message);
+      // Handle sign-in errors (e.g., invalid credentials, network issues, etc.)
+    }
   }, [email, password, router]);
-
-  const clearEmailText = () => {
-    setEmail("");
-    emailRef.current.textContent = "";
-    emailRef.current.focus();
-  };
-
-  const clearPasswordText = () => {
-    setPassword("");
-    passwordRef.current.textContent = "";
-    passwordRef.current.focus();
-  };
 
   return (
     <div className={styles.logInScreen}>
       <b className={styles.logIn1}>
           Log In
         </b>
-      <span className={styles.logInButton} onClick={onLoginClick}>Log In 
-      </span>
+      <button className={styles.logInButton} onClick={onLoginClick}>
+        Log In
+      </button>
 
       <div className={styles.textBoxes}>
         <div
           className={styles.emailFieldFrame}
-          onClick={clearEmailText}
-          onFocus={clearEmailText}
-          onBlur={() => {
-            if (!email) {
-              emailRef.current.textContent = "Enter A Valid Email";
-            }
-          }}
         >
-          <div
+          <input
             className={styles.email}
-            ref={emailRef}
-            contentEditable
-            onInput={(e) => setEmail(e.target.textContent.trim())}
-          >
-            {email ? email : "Enter A Valid Email"}
-          </div>
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter A Valid Email"
+          />
         </div>
         <div
           className={styles.passwordFieldFrame}
-          onClick={clearPasswordText}
-          onFocus={clearPasswordText}
-          onBlur={() => {
-            if (!password) {
-              passwordRef.current.textContent = "Create A Password";
-            }
-          }}
         >
           <img className={styles.vectorIcon} alt="" src="/vector.svg" />
-          <div
+          <input
             className={styles.email}
-            ref={passwordRef}
-            contentEditable
-            onInput={(e) => setPassword(e.target.textContent.trim())}
-          >
-            {password ? password : "Create A Password"}
-          </div>
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter your password"
+          />
         </div>
         <div className={styles.forgotYourPassword}>Forgot Your Password?</div>
         <div className={styles.dontHaveAnContainer} onClick={onDontHaveAnClick}>

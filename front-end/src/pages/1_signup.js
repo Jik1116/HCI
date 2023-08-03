@@ -3,27 +3,47 @@ import { useRouter } from "next/router";
 import styles from "./1_signup.module.css";
 import Link from "next/link"; // Import Link from next/link
 import 'animate.css';
+import firebase from '../../../back-end/firebase';
+
+
 const SignUpPage = () => {
   const router = useRouter();
-  const [email, setEmail] = useState(""); // State to store the email value
-  const [password, setPassword] = useState(""); // State to store the password value
-  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
-
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
-  const onEnterAValidClick = useCallback(() => {
-    // Please sync "sign up page (w email filled)" to the project
-  }, []);
-
   const onBackButtonIconClick = useCallback(() => {
-    router.push("/");
+    router.push('/');
   }, [router]);
+
+  const handleSignUp = useCallback(async () => {
+    try {
+      const auth = firebase.auth();
+      await auth.createUserWithEmailAndPassword(email, password);
+
+      // User registration successful
+      // You can handle the successful sign-up here (e.g., show a success message, redirect to a new page, etc.)
+      console.log('User registered successfully!');
+    } catch (error) {
+      // Handle sign-up errors (e.g., email already in use, weak password, etc.)
+      console.error('Error registering user:', error.message);
+    }
+  }, [email, password]);
 
   const onNextButtonClick = useCallback(() => {
-    // Add logic here to handle data validation or API calls before navigating
-    router.push("/3_confirmsignup");
-  }, [router]);
+    handleSignUp()
+      .then(() => {
+        console.log('Signup successful!');
+        router.push("/3_confirmsignup"); // Navigate after successful signup
+      })
+      .catch((error) => {
+        // Handle the error that occurred during signup
+        console.error('Signup error:', error);
+      });
+  }, [handleSignUp, router]);
+
 
   const clearEmailText = () => {
     setEmail(""); // Clear the email text
