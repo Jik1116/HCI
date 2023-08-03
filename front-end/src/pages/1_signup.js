@@ -2,7 +2,7 @@ import { useCallback, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import styles from "./1_signup.module.css";
 import Link from "next/link"; // Import Link from next/link
-
+import 'animate.css';
 const SignUpPage = () => {
   const router = useRouter();
   const [email, setEmail] = useState(""); // State to store the email value
@@ -18,6 +18,11 @@ const SignUpPage = () => {
 
   const onBackButtonIconClick = useCallback(() => {
     router.push("/");
+  }, [router]);
+
+  const onNextButtonClick = useCallback(() => {
+    // Add logic here to handle data validation or API calls before navigating
+    router.push("/3_confirmsignup");
   }, [router]);
 
   const clearEmailText = () => {
@@ -39,7 +44,9 @@ const SignUpPage = () => {
   return (
     <div className={styles.signUpPage}>
       <div className={styles.nextWrapper}>
-        <div className={styles.next}>Next</div>
+        <div className={styles.next} onClick={onNextButtonClick}>
+          Next
+        </div>
       </div>
 
       <div
@@ -76,9 +83,9 @@ const SignUpPage = () => {
         />
       </div>
 
-      <Link href="/" passHref>
-        <b className={styles.signUp}>Sign Up</b>
-      </Link>
+      <b className={styles.signUp} onClick={onEnterAValidClick}>
+        Sign Up
+      </b>
       <img
         className={styles.backButtonIcon}
         alt="Back"

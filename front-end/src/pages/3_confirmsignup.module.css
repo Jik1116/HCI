@@ -1,0 +1,67 @@
+/* 3_confirmsignup.module.css */
+
+.div {
+    position: relative;
+    font-weight: 500;
+  }
+  
+.signUpPageWPasswordFilled {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: var(--font-lato);
+    position: relative;
+    border-radius: 30px;
+    background-color: #fff; /* Change the color to your desired background color */
+    border: 10px solid #000; /* Change the color to your desired border color */
+    box-sizing: border-box;
+  }
+  
+  .tickIcon {
+    width: 200px; /* Adjust the width as needed */
+    height: auto; /* Keep the aspect ratio */
+    align-self: center;
+  }
+  
+  .tickIconWrapper {
+    margin-top: 0%;
+    margin-bottom: 30px; /* Adjust the margin as needed to increase the spacing */
+  }
+  
+  .youveSuccessfullyCreated {
+    font-size: 27px;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 30px; /* Add some space between the tick icon and the text */
+    width: 80%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the text horizontally */
+    color: var(--color-darkslateblue);
+  }
+  
+  .backToLogInWrapper {
+    cursor: pointer;
+    margin-top: 35px; /* Add margin to separate the button from the text */
+    margin-bottom: 55%;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-darkslateblue);
+    border: 1px solid var(--color-darkslateblue);
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 24px;
+    width: 268px;
+    height: 51px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* If you want the button text to be centered within the button, you can add the following styles */
+  .backToLogInWrapper {
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

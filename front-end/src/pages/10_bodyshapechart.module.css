@@ -1,0 +1,91 @@
+.purpleWaveIcon {
+    margin-top: 0px;
+    left: 0;
+    width: 100%;
+    height: 460px;
+  }
+  
+  .shapeChart {
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    color: #5F4B98;
+    text-align: center;
+    width: 200px;
+    font-size: 28px;
+    font-weight: 501;
+  }
+
+  .shapeChart1 {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    color: #5F4B98;
+    text-align: center;
+    width: 250px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .div {
+    position: relative;
+    font-weight: 500;
+  }
+  
+  .backButtonIcon {
+    position: absolute;
+    top: 72px;
+    left: 25px;
+    width: 22px;
+    height: auto;
+    cursor: pointer;
+  }
+  
+  .image2Icon {
+    position: absolute;
+    top: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 360px;
+    height: auto;
+    object-fit: cover;
+    display: grid;
+    align-items: center;
+  }
+  
+  .onboardingBodyShapeChartChild {
+    position: absolute;
+    top: 729px;
+    left: 20px;
+    background-color: var(--color-white);
+    width: 63px;
+    height: 26px;
+  }
+  
+  .image1Icon {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 340px;
+    height: auto;
+    display: grid;
+    align-items: center;
+  }
+  
+  .onboardingBodyShapeChart {
+    position: relative;
+    border-radius: 30px;
+    background-color: #fff; /* Change the color to your desired background color */
+    border: 10px solid #000; /* Change the color to your desired border color */
+    box-sizing: border-box;
+    width: 100%;
+    height: 820px;
+    overflow: hidden;
+    font-family: var(--font-lato);
+  }
+  

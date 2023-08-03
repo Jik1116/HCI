@@ -1,150 +1,128 @@
-.div {
-    position: relative;
-    font-weight: 500;
-  }
+.logInScreen {
+  position: relative;
+  border-radius: 30px;
+  background-color: var(--color-white);
+  border: 10px solid #000;
+  box-sizing: border-box;
+  width: 100%;
+  height: 820px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 14px;
+  color: var(--color-darkslateblue);
+  font-family: var(--font-lato);
+  display: grid;
+  place-items: center;
+}
 
-  .logIn {
+.logInButton {
+  position: absolute;
+  align-items: center;
+  top: 467px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-darkslateblue);
+  border: 1px solid var(--color-darkslateblue);
+  box-sizing: border-box;
+  width: 268px;
+  height: 51px;
+  font-size: 24px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+}
 
-    font-weight: 600;
-    justify-content: center;
-  }
-  
-  .logInButton {
-    position: absolute;
-    top: 467px;
-    left: 46px;
-    border-radius: var(--br-3xs);
-    background-color: var(--color-darkslateblue); /* Change the color to your desired background color */
-    border: 1px solid var(--color-darkslateblue); /* Change the color to your desired border color */
-    box-sizing: border-box;
-    width: 268px;
-    height: 51px;
-    overflow: hidden;
-    font-size: 24px;
-    color: #fff; /* Change the color to your desired text color */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
+.logInText {
+  /* Add any specific styles for the "Log In" text if needed */
+}
 
-  .email {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-  }
+.emailFieldFrame,
+.passwordFieldFrame,
+.vectorIcon {
+  position: absolute;
+  overflow: hidden;
+}
 
-  .emailFieldFrame {
-    top: 0;
-    left: 0;
-    border-radius: var(--br-3xs);
-    border: 1px solid var(--color-darkslateblue);
-    box-sizing: border-box;
-    width: 268px;
-    height: 51px;
-    place-items: center; /* Center items both horizontally and vertically */
-    /* Add other container styles as needed */
-    display: grid; /* Use CSS Grid for more precise centering */
-  }
+.emailFieldFrame {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  border: 1px solid var(--color-darkslateblue);
+  box-sizing: border-box;
+  width: 268px;
+  height: 51px;
+  place-items: center;
+  display: grid;
+}
 
-  .emailFieldFrame,
-  .passwordFieldFrame,
-  .vectorIcon {
-    position: absolute;
-    overflow: hidden;
-  }
+.email {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: large;
+  justify-content: center;
+}
 
-  .email {
-    font-size: large;
-    justify-content: center;
-  }
+.vectorIcon {
+  height: 31.58%;
+  width: 7.46%;
+  top: 35.78%;
+  right: 5.88%;
+  bottom: 32.64%;
+  left: 86.66%;
+  max-width: 100%;
+  max-height: 100%;
+}
 
-  .vectorIcon {
-    height: 31.58%;
-    width: 7.46%;
-    top: 35.78%;
-    right: 5.88%;
-    bottom: 32.64%;
-    left: 86.66%;
-    max-width: 100%;
-    max-height: 100%;
-  }
-  .passwordFieldFrame {
-    top: 79px;
-    left: 0;
-    border-radius: var(--br-3xs);
-    border: 1px solid var(--color-darkslateblue);
-    box-sizing: border-box;
-    width: 268px;
-    height: 51px;
-  }
+.passwordFieldFrame {
+  top: 79px;
+  left: 0;
+  border-radius: var(--br-3xs);
+  border: 1px solid var(--color-darkslateblue);
+  box-sizing: border-box;
+  width: 268px;
+  height: 51px;
+}
 
-  .eyeIcon {
-    position: absolute;
-    top: 18px;
-    right: 12px;
-    width: 20px; /* Set the width and height for the eye icon */
-    height: 16px;
-    cursor: pointer;
-    align-self: center;
-  }
+.forgotYourPassword {
+  position: absolute;
+  top: 136px;
+  left: 10px;
+  font-size: 12px;
+  color: var(--color-steelblue);
+}
 
-  .forgotYourPassword {
-    position: absolute;
-    top: 136px;
-    left: 10px;
-    font-size: 12px;
-    color: var(--color-steelblue);
-  }
+.here {
+  text-decoration: underline;
+}
 
-  .forgotYourPassword,
-  .here {
-    text-decoration: underline;
-  }
+.dontHaveAnContainer {
+  position: absolute;
+  top: 268px;
+  left: calc(50% - 94px);
+  font-size: 16px;
+  color: var(--color-steelblue);
+  text-align: center;
+  display: inline-block;
+  width: 188px;
+  cursor: pointer;
+}
 
-  .dontHaveAnContainer {
-    position: absolute;
-    top: 268px;
-    left: calc(50% - 94px);
-    font-size: 16px;
-    color: var(--color-steelblue);
-    text-align: center;
-    display: inline-block;
-    width: 188px;
-    cursor: pointer;
-  }
+.textBoxes {
+  position: absolute;
+  align-items: center;
+  top: 260px;
+  width: 268px;
+  height: 306px;
+  font-size: var(--font-size-lg);
+}
 
-  .textBoxes {
-    position: absolute;
-    top: 260px;
-    left: 46px;
-    width: 268px;
-    height: 306px;
-    font-size: var(--font-size-lg);
-  }
-
-  .logIn1 {
-    position: absolute;
-    top: 172px;
-    left: calc(50% - 64px);
-    font-size: 40px;
-  }
-
-  .logInScreen {
-    position: relative;
-    border-radius: 30px;
-    background-color: var(--color-white);
-    border: 10px solid #000;
-    box-sizing: border-box;
-    width: 100%;
-    height: 820px;
-    overflow: hidden;
-    text-align: left;
-    font-size: 14px;
-    color: var(--color-darkslateblue);
-    font-family: var(--font-lato);
-    display: grid; /* Use CSS Grid for more precise centering */
-    place-items: center; /* Center items both horizontally and vertically */
-    /* Add other container styles as needed */;
-
-  }
+.logIn1 {
+  position: absolute;
+  top: 172px;
+  left: calc(50% - 64px);
+  font-size: 40px;
+  cursor: pointer;
+}

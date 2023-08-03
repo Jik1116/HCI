@@ -1,0 +1,373 @@
+.purpleWaveIcon {
+    margin-top: 0px;
+    left: 0;
+    width: 100%;
+    height: 450px;
+  }
+
+  .sizeChart {
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    color: #5F4B98;
+    text-align: center;
+    width: 200px;
+    font-size: 28px;
+    font-weight: 501;
+  }
+
+  .onboardingSizeChartChild {
+    position: absolute;
+    top: 267px;
+    left: 17px;
+    border: 1.5px solid #5F4B98;
+    box-sizing: border-box;
+    color: #5F4B98;
+    width: 332px;
+    height: 387px;
+  }
+
+  .div,
+  .div1,
+  .div2,
+  .m,
+  .xs {
+    position: absolute;
+    top: 371px;
+    left: 29px;
+    font-weight: 500;
+  }
+
+  .div,
+  .div1,
+  .div2,
+  .m {
+    left: 67px;
+  }
+
+  .div1,
+  .div2,
+  .m {
+    left: 185px;
+  }
+
+  .div2,
+  .m {
+    left: 277px;
+  }
+
+  .m {
+    top: 451px;
+    left: 31px;
+  }
+
+  .div3,
+  .div4,
+  .div5,
+  .div6,
+  .div7,
+  .div8,
+  .size,
+  .xl {
+    position: absolute;
+    top: 451px;
+    left: 67px;
+    font-weight: 500;
+  }
+
+  .div4,
+  .div5,
+  .div6,
+  .div7,
+  .div8,
+  .size,
+  .xl {
+    left: 172px;
+  }
+
+  .div5,
+  .div6,
+  .div7,
+  .div8,
+  .size,
+  .xl {
+    left: 277px;
+  }
+
+  .div6,
+  .div7,
+  .div8,
+  .size,
+  .xl {
+    top: 531px;
+    left: 29px;
+  }
+
+  .div6,
+  .div7,
+  .div8,
+  .size {
+    left: 67px;
+  }
+
+  .div7,
+  .div8,
+  .size {
+    left: 185px;
+  }
+
+  .div8,
+  .size {
+    left: 270px;
+  }
+
+  .size {
+    top: 292px;
+    left: 24px;
+  }
+
+  .bust,
+  .div10,
+  .div11,
+  .div9,
+  .hip,
+  .waist,
+  .xl1,
+  .xs1 {
+    position: absolute;
+    top: 292px;
+    left: 92px;
+    font-weight: 500;
+  }
+
+  .div10,
+  .div11,
+  .div9,
+  .hip,
+  .waist,
+  .xl1,
+  .xs1 {
+    left: 193px;
+  }
+
+  .div10,
+  .div11,
+  .div9,
+  .hip,
+  .xl1,
+  .xs1 {
+    left: 292px;
+  }
+
+  .div10,
+  .div11,
+  .div9,
+  .xl1,
+  .xs1 {
+    top: 331px;
+    left: 24px;
+  }
+
+  .div10,
+  .div11,
+  .div9,
+  .xl1 {
+    left: 69px;
+  }
+
+  .div10,
+  .div11,
+  .xl1 {
+    left: 185px;
+  }
+
+  .div11,
+  .xl1 {
+    left: 270px;
+  }
+
+  .xl1 {
+    top: 611px;
+    left: 24px;
+  }
+
+  .div12,
+  .div13,
+  .div14,
+  .div15,
+  .div16,
+  .div17,
+  .l,
+  .xl2 {
+    position: absolute;
+    top: 611px;
+    left: 80px;
+    font-weight: 500;
+  }
+
+  .div13,
+  .div14,
+  .div15,
+  .div16,
+  .div17,
+  .l,
+  .xl2 {
+    left: 185px;
+  }
+
+  .div14,
+  .div15,
+  .div16,
+  .div17,
+  .l,
+  .xl2 {
+    left: 270px;
+  }
+
+  .div15,
+  .div16,
+  .div17,
+  .l,
+  .xl2 {
+    top: 571px;
+    left: 24px;
+  }
+
+  .div15,
+  .div16,
+  .div17,
+  .l {
+    left: 67px;
+  }
+
+  .div16,
+  .div17,
+  .l {
+    left: 185px;
+  }
+
+  .div17,
+  .l {
+    left: 277px;
+  }
+
+  .l {
+    top: 491px;
+    left: 34px;
+  }
+
+  .div18,
+  .div19,
+  .div20,
+  .div21,
+  .div22,
+  .div23,
+  .s {
+    position: absolute;
+    top: 491px;
+    left: 80px;
+    font-weight: 500;
+  }
+
+  .div19,
+  .div20,
+  .div21,
+  .div22,
+  .div23,
+  .s {
+    left: 172px;
+  }
+
+  .div20,
+  .div21,
+  .div22,
+  .div23,
+  .s {
+    left: 270px;
+  }
+
+  .div21,
+  .div22,
+  .div23,
+  .s {
+    top: 411px;
+    left: 33px;
+  }
+
+  .div21,
+  .div22,
+  .div23 {
+    left: 73px;
+  }
+
+  .div22,
+  .div23 {
+    left: 185px;
+  }
+
+  .div23 {
+    left: 277px;
+  }
+
+  .backButtonIcon {
+    position: absolute;
+    top: 72px;
+    left: 25px;
+    width: 22px;
+    height: auto;
+    cursor: pointer;
+  }
+
+  .onboardingSizeChart {
+    position: relative;
+    border-radius: 30px;
+    background-color: #fff; /* Change the color to your desired background color */
+    border: 10px solid #000; /* Change the color to your desired border color */
+    box-sizing: border-box;
+    width: 100%;
+    height: 820px;
+    overflow: hidden;
+    font-family: var(--font-lato);
+  }
+  
+.onboardingSizeChartChild,
+.div,
+.div1,
+.div2,
+.m,
+.s,
+.xs,
+.div3,
+.div4,
+.div5,
+.div6,
+.div7,
+.div8,
+.size,
+.bust,
+.waist,
+.hip,
+.xl,
+.l,
+.div9,
+.div10,
+.div11,
+.div12,
+.div13,
+.div14,
+.div15,
+.div16,
+.div17,
+.div18,
+.div19,
+.div20,
+.div21,
+.div22,
+.div23,
+.xl1,
+.xs1,
+.xl2 {
+  color: #5F4B98; /* Updated color */
+}

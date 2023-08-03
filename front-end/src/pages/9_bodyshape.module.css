@@ -1,0 +1,255 @@
+.purpleWaveIcon {
+    margin-top: 0px;
+    left: 0;
+    width: 100%;
+    height: 450px;
+  }
+
+  .whatIsYour {
+    position: absolute;
+    top: 230px;
+    left: 50%; /* Remove the left property */
+    transform: translateX(-50%); /* Center horizontally using translateX */
+    color: var(--color-darkslateblue);
+    text-align: center;
+    font-size: 30px;
+    width: 320px;
+  }
+
+  .helpUsGet {
+    position: absolute;
+    top: 58px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    color: #ddd5e8;
+    text-align: center;
+    width: 200px;
+    font-size: 28px;
+    font-weight: 500;
+  }
+
+  .backButtonIcon {
+    position: absolute;
+    top: 72px;
+    left: 25px;
+    width: 22px;
+    height: auto;
+    cursor: pointer;
+  }
+
+  .next {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: 500;
+    font-size: 20px;
+    color: #8c7db7;
+  }
+
+  .nextButton {
+    position: absolute;
+    top: 4px;
+    left: 56px;
+    width: 22px;
+    height: auto;
+  }
+
+  .vectorIcon {
+    position: absolute;
+    top: 5px;
+    left: 55px;
+    width: 15px;
+    height: auto;
+  }
+
+  .nextButton {
+    top: 687px;
+    left: 247px;
+    width: 66px;
+    height: 26px;
+    font-size: var(--font-size-3xl);
+  }
+
+  .onboardingBodyShapeChild,
+  .onboardingBodyShapeChild1,
+  .onboardingBodyShapeChild2,
+  .onboardingBodyShapeInner,
+  .onboardingBodyShapeItem,
+  .rectangleDiv {
+    position: absolute;
+    top: 347px;
+    left: 44px;
+    border-radius: var(--br-3xs);
+    border: 2px solid var(--color-darkslateblue);
+    box-sizing: border-box;
+    width: 140px; /* Increase the width value here */
+    height: 43px;
+    cursor: pointer;
+  }
+
+  .onboardingBodyShapeChild1,
+  .onboardingBodyShapeChild2,
+  .onboardingBodyShapeInner,
+  .onboardingBodyShapeItem,
+  .rectangleDiv {
+    left: 193px;
+  }
+
+  .onboardingBodyShapeChild1,
+  .onboardingBodyShapeChild2,
+  .onboardingBodyShapeInner,
+  .rectangleDiv {
+    top: 404px;
+    left: 44px;
+  }
+
+  .onboardingBodyShapeChild1,
+  .onboardingBodyShapeChild2,
+  .rectangleDiv {
+    left: 193px;
+  }
+
+  .onboardingBodyShapeChild1,
+  .onboardingBodyShapeChild2 {
+    top: 575px;
+    left: 44px;
+  }
+
+  .onboardingBodyShapeChild2 {
+    left: 193px;
+  }
+
+  .rectangle,
+  .rectangle1 {
+    position: absolute;
+    top: 360px;
+    left: 76px;
+    color: #5F4B98;
+  }
+
+  .rectangle1 {
+    left: 225px;
+  }
+
+  .apple,
+  .invertedTriangle {
+    position: absolute;
+    top: 417px;
+    left: 55px;
+    color: #5F4B98;
+  }
+
+  .apple {
+    top: 586px;
+    left: 90px;
+  }
+
+  .invertedTriangle1 {
+    position: absolute;
+    top: 417px;
+    left: 203px;
+    color: #5F4B98;
+  }
+
+  .onboardingBodyShapeChild3,
+  .onboardingBodyShapeChild4 {
+    position: absolute;
+    top: 461px;
+    left: 44px;
+    border-radius: var(--br-3xs);
+    border: 2px solid var(--color-darkslateblue);
+    box-sizing: border-box;
+    width: 140px;
+    height: 43px;
+    cursor: pointer;
+  }
+
+  .onboardingBodyShapeChild4 {
+    left: 193px;
+  }
+
+  .hourglass,
+  .trapezoid {
+    position: absolute;
+    top: 472px;
+    left: 78px;
+    color: #5F4B98;
+  }
+
+  .trapezoid {
+    left: 224px;
+  }
+
+  .onboardingBodyShapeChild5,
+  .onboardingBodyShapeChild6 {
+    position: absolute;
+    top: 518px;
+    left: 44px;
+    border-radius: var(--br-3xs);
+    border: 2px solid var(--color-darkslateblue);
+    box-sizing: border-box;
+    width: 140px;
+    height: 43px;
+    cursor: pointer;
+  }
+
+  .onboardingBodyShapeChild6 {
+    left: 193px;
+  }
+
+  .pear,
+  .triangle {
+    position: absolute;
+    top: 528px;
+    left: 94px;
+    color: #5F4B98;
+  }
+
+  .triangle {
+    left: 232px;
+    top: 530px;
+  }
+
+  .female,
+  .male,
+  .oval {
+    position: absolute;
+    top: 586px;
+    left: 244px;
+    color: #5F4B98;
+  }
+
+  .female,
+  .male {
+    top: 317px;
+    left: 84px;
+  }
+
+  .male {
+    left: 240px;
+  }
+
+  .shapeChart {
+    position: absolute;
+    top: 640px;
+    left: calc(50% - 51px);
+    font-size: var(--font-size-base);
+    text-decoration: underline;
+    cursor: pointer;
+    color: #5F4B98;
+  }
+
+  .onboardingBodyShape {
+    position: relative;
+    border-radius: 30px;
+    background-color: #fff; /* Change the color to your desired background color */
+    border: 10px solid #000; /* Change the color to your desired border color */
+    box-sizing: border-box;
+    width: 100%;
+    height: 820px;
+    overflow: hidden;
+    font-family: var(--font-lato);
+  }
+
+  
