@@ -11,8 +11,8 @@
   font-family: var(--font-lato);
   position: relative;
   border-radius: 30px;
-  background-color: #fff;
-  border: 10px solid #000;
+  background-color: #fff; /* Change the color to your desired background color */
+  border: 10px solid #000; /* Change the color to your desired border color */
   box-sizing: border-box;
 }
 
@@ -85,8 +85,7 @@
 .scrollableGallery {
   overflow: auto;
   height: calc(100% - 65px);
-  transform: translateX(6.2%); /* Move the gallery to the right by 10% */
-  
+  margin-left: 6.5%; /* Adjust the left margin as needed */
 }
 
 .pictureGallery {
@@ -100,8 +99,8 @@
 .pictureItem {
   border: 1px solid #ccc;
   border-radius: 8px;
-  overflow: hidden; 
-  width: 200px;
+  overflow: hidden;
+  width: 150px;
 }
 
 .pictureItem img {
