@@ -118,7 +118,7 @@
   top: 10px;
   left: 10px;
   bottom: 10px;
-  width: 75%; /* Cover 3/4 of the page horizontally */
+  width: 50%; /* Cover 3/4 of the page horizontally */
   max-width: 750px; /* Limit the maximum width of the pop-up container */
   margin: 0 auto; /* Center the pop-up horizontally */
   background-color: rgba(255, 255, 255, 0.9);
@@ -155,7 +155,7 @@
   top: 10px;
   left: 10px;
   bottom: 10px;
-  width: 75%;
+  width: 50%;
   max-width: 750px;
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.9);
@@ -322,13 +322,13 @@
 }
 .rectangleParent9 {
   left: 98px;
-}
+} 
 .geography {
   position: absolute;
   top: 514px;
   left: 28px;
-  font-size: var(--font-size-xs);
-}
+  font-weight: 500;
+} 
 .groupChild11 {
   position: absolute;
   top: 0;
@@ -472,7 +472,7 @@
   width: 116px;
   height: 34px;
   font-size: var(--font-size-sm);
-}
+} 
 .rectangleParent {
   top: 0;
   left: 0;
@@ -494,4 +494,9 @@
   color: var(--color-darkslateblue);
   font-family: var(--font-lato);
 } 
+
+.active {
+  background-color: var(--color-darkslateblue);
+}
+
 
