@@ -1,497 +1,501 @@
 .homePage {
-    position: relative;
-    border-radius: var(--br-11xl);
-    background-color: var(--color-white);
-    border: 10px solid var(--color-black);
-    box-sizing: border-box;
-    width: 100%;
-    height: 820px;
-    overflow: hidden;
-    font-family: var(--font-lato);
-    position: relative;
-    border-radius: 30px;
-    background-color: #fff; /* Change the color to your desired background color */
-    border: 10px solid #000; /* Change the color to your desired border color */
-    box-sizing: border-box;
-  }
+  position: relative;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-white);
+  border: 10px solid var(--color-black);
+  box-sizing: border-box;
+  width: 100%;
+  height: 820px;
+  overflow: hidden;
+  font-family: var(--font-lato);
+  position: relative;
+  border-radius: 30px;
+  background-color: #fff; /* Change the color to your desired background color */
+  border: 10px solid #000; /* Change the color to your desired border color */
+  box-sizing: border-box;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: white; /* Add your desired background color */
+}
+
+.filterContainer {
+  position: relative;
+  width: 23px;
+  height: 41px;
+}
+
+.latestParent,
+.filterIcon {
+  position: absolute;
+  top: 48px;
+  left: 131px;
+  width: 100px;
+  height: 36px;
+}
+
+.filterIcon {
+  top: 27px;
+  left: 15px;
+  width: 25px;
+  height: auto;
+}
+
+.latest {
+  position: absolute;
+  top: -5px;
+  left: calc(50% - 55px);
+  font-weight: 600;
+  font-size: 32px;
+  color: var(--color-darkslateblue);
+}
+
+.vectorIcon {
+  position: absolute;
+  top: 5px;
+  left: 89px;
+  width: 12px;
+  height: 18px;
+}
+
+.favoritesContainer {
+  position: relative;
+  width: 39px;
+  height: 41px;
+}
+
+.favoritesIcon {
+  position: absolute;
+  height: auto;
+  width: 50px;
+  top: 27px;
+  right: 15px;
+  bottom: 39.02%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+/* Assuming the parent container has a class named .galleryContainer */
+.scrollableGallery {
+  overflow: auto;
+  height: calc(100% - 65px);
+  margin-left: 6.5%; /* Adjust the left margin as needed */
+}
+
+.pictureGallery {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  gap: 20px;
+  padding: 55px 0;
+  width: 100%;
+}
+
+.pictureItem {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 150px;
+}
+
+.pictureItem img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.filterPopup {
+  display: none; /* Hide the container by default */
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  width: 50%; /* Cover 3/4 of the page horizontally */
+  max-width: 750px; /* Limit the maximum width of the pop-up container */
+  margin: 0 auto; /* Center the pop-up horizontally */
+  background-color: rgba(255, 255, 255, 0.9);
   
-  .topBar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px;
-    background-color: white; /* Add your desired background color */
-  }
-  
-  .filterContainer {
-    position: relative;
-    width: 23px;
-    height: 41px;
-  }
-  
-  .latestParent,
-  .filterIcon {
-    position: absolute;
-    top: 48px;
-    left: 131px;
-    width: 100px;
-    height: 36px;
-  }
-  
-  .filterIcon {
-    top: 27px;
-    left: 15px;
-    width: 25px;
-    height: auto;
-  }
-  
-  .latest {
-    position: absolute;
-    top: -5px;
-    left: calc(50% - 55px);
-    font-weight: 600;
-    font-size: 32px;
-    color: var(--color-darkslateblue);
-  }
-  
-  .vectorIcon {
-    position: absolute;
-    top: 5px;
-    left: 89px;
-    width: 12px;
-    height: 18px;
-  }
-  
-  .favoritesContainer {
-    position: relative;
-    width: 39px;
-    height: 41px;
-  }
-  
-  .favoritesIcon {
-    position: absolute;
-    height: auto;
-    width: 50px;
-    top: 27px;
-    right: 15px;
-    bottom: 39.02%;
-    max-width: 100%;
-    overflow: hidden;
-    max-height: 100%;
-  }
-  
-  /* Assuming the parent container has a class named .galleryContainer */
-  .scrollableGallery {
-    overflow: auto;
-    height: calc(100% - 65px);
-    margin-left: 6.5%; /* Adjust the left margin as needed */
-  }
-  
-  .pictureGallery {
-    display: grid;
-    grid-template-columns: repeat(2, 150px);
-    gap: 20px;
-    padding: 55px 0;
-    width: 100%;
-  }
-  
-  .pictureItem {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    width: 150px;
-  }
-  
-  .pictureItem img {
-    max-width: 100%;
-    max-height: 100%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  
-  .filterPopup {
-    display: none; /* Hide the container by default */
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    bottom: 10px;
-    width: 75%; /* Cover 3/4 of the page horizontally */
-    max-width: 750px; /* Limit the maximum width of the pop-up container */
-    margin: 0 auto; /* Center the pop-up horizontally */
-    background-color: rgba(255, 255, 255, 0.9);
-    
-    font-family: var(--font-lato);
-  
-    /* Center the pop-up vertically */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  
-  
-  
-  .occasion {
-    position: absolute;
-    top: 333px;
-    left: 28px;
-    font-weight: 500;
-  }
-  .groupChild,
-  .groupItem {
-    position: absolute;
-    top: 0;
-    left: 0;
-  } 
-  
-  
-  
-  .groupChild {
-    display: none;
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    bottom: 10px;
-    width: 75%;
-    max-width: 750px;
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 30px 4px 30px rgba(0, 0, 0, 0.25);
-    font-family: var(--font-lato);
-  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  } 
-  
-  
-  
-  .groupItem {
-    border-radius: var(--br-10xs);
-    border: 1px solid var(--color-darkslateblue);
-    box-sizing: border-box;
-    width: 67px;
-    height: 26px;
-  }
-  .camis,
-  .rectangleGroup {
-    position: absolute;
-    top: 5px;
-    left: 16px;
-  }
-  .rectangleGroup {
-    top: 272px;
-    left: 98px;
-    width: 67px;
-    height: 26px;
-    cursor: pointer;
-  }
-  .searchFilter1,
-  .typeOfClothing {
-    position: absolute;
-    font-weight: 500;
-  }
-  .searchFilter1 {
-    top: 28px;
-    left: 41px;
-    font-size: 20px;
-  }
-  .typeOfClothing {
-    top: 86px;
-    left: 28px;
-    font-size: var(--font-size-xs);
-  }
-  .tees {
-    position: absolute;
-    top: 5px;
-    left: 21px;
-  }
-  .rectangleContainer {
-    position: absolute;
-    top: 107px;
-    left: 25px;
-    width: 67px;
-    height: 26px;
-    cursor: pointer;
-  }
-  .shirts {
-    position: absolute;
-    top: 5px;
-    left: 17px;
-  }
-  .groupDiv,
-  .rectangleParent1 {
-    position: absolute;
-    top: 107px;
-    left: 98px;
-    width: 67px;
-    height: 26px;
-    cursor: pointer;
-  }
-  .rectangleParent1 {
-    top: 173px;
-    left: 25px;
-  }
-  .skirts {
-    position: absolute;
-    top: 5px;
-    left: 18px;
-  }
-  .rectangleParent2 {
-    position: absolute;
-    top: 173px;
-    left: 98px;
-    width: 67px;
-    height: 26px;
-    cursor: pointer;
-  }
-  .jackets {
-    position: absolute;
-    top: 5px;
-    left: 13px;
-  }
-  .rectangleParent3 {
-    position: absolute;
-    top: 206px;
-    left: 25px;
-    width: 67px;
-    height: 26px;
-    cursor: pointer;
-  }
-  .cardigans {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-  }
-  .rectangleParent4 {
-    position: absolute;
-    top: 206px;
-    left: 98px;
-    width: 67px;
-    height: 26px;
-    cursor: pointer;
-  }
-  .hoodies {
-    position: absolute;
-    top: 5px;
-    left: 10px;
-  }
-  .rectangleParent5 {
-    position: absolute;
-    top: 239px;
-    left: 25px;
-    width: 67px;
-    height: 26px;
-    cursor: pointer;
-  }
-  .tankTops {
-    position: absolute;
-    top: 5px;
-    left: 6px;
-  }
-  .rectangleParent6 {
-    position: absolute;
-    top: 272px;
-    left: 25px;
-    width: 67px;
-    height: 26px;
-    cursor: pointer;
-  }
-  .dresses {
-    position: absolute;
-    top: 5px;
-    left: 11px;
-  }
-  .rectangleParent7,
-  .rectangleParent8,
-  .rectangleParent9 {
-    position: absolute;
-    top: 239px;
-    left: 98px;
-    width: 67px;
-    height: 26px;
-    cursor: pointer;
-  }
-  .rectangleParent8,
-  .rectangleParent9 {
-    top: 140px;
-    left: 25px;
-  }
-  .rectangleParent9 {
-    left: 98px;
-  }
-  .geography {
-    position: absolute;
-    top: 514px;
-    left: 28px;
-    font-size: var(--font-size-xs);
-  }
-  .groupChild11 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: var(--br-8xs);
-    border: 1px solid var(--color-darkslateblue);
-    box-sizing: border-box;
-    width: 67px;
-    height: 26px;
-  }
-  .rectangleParent10,
-  .rectangleParent11 {
-    position: absolute;
-    top: 535px;
-    left: 22px;
-    width: 67px;
-    height: 26px;
-  }
-  .rectangleParent11 {
-    left: 95px;
-    cursor: pointer;
-  }
-  .western {
-    position: absolute;
-    top: 5px;
-    left: 9px;
-  }
-  .rectangleParent12,
-  .rectangleParent13 {
-    position: absolute;
-    top: 568px;
-    left: 22px;
-    width: 67px;
-    height: 26px;
-  }
-  .rectangleParent13 {
-    left: 95px;
-    cursor: pointer;
-  }
-  .casual {
-    position: absolute;
-    top: 5px;
-    left: 14px;
-  }
-  .rectangleParent14 {
-    position: absolute;
-    top: 354px;
-    left: 25px;
-    width: 67px;
-    height: 26px;
-    cursor: pointer;
-  }
-  .wedding {
-    position: absolute;
-    top: 5px;
-    left: 8px;
-  }
-  .rectangleParent15 {
-    position: absolute;
-    top: 354px;
-    left: 98px;
-    width: 67px;
-    height: 26px;
-    cursor: pointer;
-  }
-  .rectangleParent16,
-  .rectangleParent17 {
-    position: absolute;
-    top: 420px;
-    left: 25px;
-    width: 67px;
-    height: 26px;
-  }
-  .rectangleParent17 {
-    left: 98px;
-  }
-  .rectangleParent18,
-  .rectangleParent19,
-  .rectangleParent20,
-  .rectangleParent21 {
-    position: absolute;
-    top: 453px;
-    left: 25px;
-    width: 67px;
-    height: 26px;
-    cursor: pointer;
-  }
-  .rectangleParent19,
-  .rectangleParent20,
-  .rectangleParent21 {
-    left: 98px;
-  }
-  .rectangleParent20,
-  .rectangleParent21 {
-    top: 387px;
-    left: 25px;
-  }
-  .rectangleParent21 {
-    left: 98px;
-  }
-  .groupChild23 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: var(--br-3xs);
-    background-color: var(--color-darkslateblue);
-    border: 2px solid var(--color-darkslateblue);
-    box-sizing: border-box;
-    width: 116px;
-    height: 34px;
-  }
-  .applyFilters {
-    position: absolute;
-    top: 8px;
-    left: 19px;
-  }
-  .groupChild24,
-  .rectangleParent22 {
-    position: absolute;
-    width: 116px;
-    height: 34px;
-  }
-  .rectangleParent22 {
-    top: 748px;
-    left: 34px;
-    font-size: var(--font-size-sm);
-    color: var(--color-white);
-  }
-  .groupChild24 {
-    top: 0;
-    left: 0;
-    border-radius: var(--br-3xs);
-    border: 1.5px solid var(--color-darkslateblue);
-    box-sizing: border-box;
-  }
-  .rectangleParent,
-  .rectangleParent23 {
-    position: absolute;
-    top: 709px;
-    left: 34px;
-    width: 116px;
-    height: 34px;
-    font-size: var(--font-size-sm);
-  }
-  .rectangleParent {
-    top: 0;
-    left: 0;
-    width: 187px;
-    height: 800px;
-    font-size: var(--font-size-smi);
-  }
-  .searchFilter {
-    position: relative;
-    border-radius: 30px;
-    background-color: var(--color-white);
-    border: 10px solid var(--color-black);
-    box-sizing: border-box;
-    width: 100%;
-    height: 820px;
-    overflow: hidden;
-    text-align: center;
-    font-size: var(--font-size-xs);
-    color: var(--color-darkslateblue);
-    font-family: var(--font-lato);
-  } 
+  font-family: var(--font-lato);
+
+  /* Center the pop-up vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+.occasion {
+  position: absolute;
+  top: 333px;
+  left: 28px;
+  font-weight: 500;
+}
+.groupChild,
+.groupItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+} 
+
+
+
+.groupChild {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  width: 50%;
+  max-width: 750px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 30px 4px 30px rgba(0, 0, 0, 0.25);
+  font-family: var(--font-lato);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+
+
+
+.groupItem {
+  border-radius: var(--br-10xs);
+  border: 1px solid var(--color-darkslateblue);
+  box-sizing: border-box;
+  width: 67px;
+  height: 26px;
+}
+.camis,
+.rectangleGroup {
+  position: absolute;
+  top: 5px;
+  left: 16px;
+}
+.rectangleGroup {
+  top: 272px;
+  left: 98px;
+  width: 67px;
+  height: 26px;
+  cursor: pointer;
+}
+.searchFilter1,
+.typeOfClothing {
+  position: absolute;
+  font-weight: 500;
+}
+.searchFilter1 {
+  top: 28px;
+  left: 41px;
+  font-size: 20px;
+}
+.typeOfClothing {
+  top: 86px;
+  left: 28px;
+  font-size: var(--font-size-xs);
+}
+.tees {
+  position: absolute;
+  top: 5px;
+  left: 21px;
+}
+.rectangleContainer {
+  position: absolute;
+  top: 107px;
+  left: 25px;
+  width: 67px;
+  height: 26px;
+  cursor: pointer;
+}
+.shirts {
+  position: absolute;
+  top: 5px;
+  left: 17px;
+}
+.groupDiv,
+.rectangleParent1 {
+  position: absolute;
+  top: 107px;
+  left: 98px;
+  width: 67px;
+  height: 26px;
+  cursor: pointer;
+}
+.rectangleParent1 {
+  top: 173px;
+  left: 25px;
+}
+.skirts {
+  position: absolute;
+  top: 5px;
+  left: 18px;
+}
+.rectangleParent2 {
+  position: absolute;
+  top: 173px;
+  left: 98px;
+  width: 67px;
+  height: 26px;
+  cursor: pointer;
+}
+.jackets {
+  position: absolute;
+  top: 5px;
+  left: 13px;
+}
+.rectangleParent3 {
+  position: absolute;
+  top: 206px;
+  left: 25px;
+  width: 67px;
+  height: 26px;
+  cursor: pointer;
+}
+.cardigans {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+.rectangleParent4 {
+  position: absolute;
+  top: 206px;
+  left: 98px;
+  width: 67px;
+  height: 26px;
+  cursor: pointer;
+}
+.hoodies {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+.rectangleParent5 {
+  position: absolute;
+  top: 239px;
+  left: 25px;
+  width: 67px;
+  height: 26px;
+  cursor: pointer;
+}
+.tankTops {
+  position: absolute;
+  top: 5px;
+  left: 6px;
+}
+.rectangleParent6 {
+  position: absolute;
+  top: 272px;
+  left: 25px;
+  width: 67px;
+  height: 26px;
+  cursor: pointer;
+}
+.dresses {
+  position: absolute;
+  top: 5px;
+  left: 11px;
+}
+.rectangleParent7,
+.rectangleParent8,
+.rectangleParent9 {
+  position: absolute;
+  top: 239px;
+  left: 98px;
+  width: 67px;
+  height: 26px;
+  cursor: pointer;
+}
+.rectangleParent8,
+.rectangleParent9 {
+  top: 140px;
+  left: 25px;
+}
+.rectangleParent9 {
+  left: 98px;
+} 
+.geography {
+  position: absolute;
+  top: 514px;
+  left: 28px;
+  font-weight: 500;
+} 
+.groupChild11 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-8xs);
+  border: 1px solid var(--color-darkslateblue);
+  box-sizing: border-box;
+  width: 67px;
+  height: 26px;
+}
+.rectangleParent10,
+.rectangleParent11 {
+  position: absolute;
+  top: 535px;
+  left: 22px;
+  width: 67px;
+  height: 26px;
+}
+.rectangleParent11 {
+  left: 95px;
+  cursor: pointer;
+}
+.western {
+  position: absolute;
+  top: 5px;
+  left: 9px;
+}
+.rectangleParent12,
+.rectangleParent13 {
+  position: absolute;
+  top: 568px;
+  left: 22px;
+  width: 67px;
+  height: 26px;
+}
+.rectangleParent13 {
+  left: 95px;
+  cursor: pointer;
+}
+.casual {
+  position: absolute;
+  top: 5px;
+  left: 14px;
+}
+.rectangleParent14 {
+  position: absolute;
+  top: 354px;
+  left: 25px;
+  width: 67px;
+  height: 26px;
+  cursor: pointer;
+}
+.wedding {
+  position: absolute;
+  top: 5px;
+  left: 8px;
+}
+.rectangleParent15 {
+  position: absolute;
+  top: 354px;
+  left: 98px;
+  width: 67px;
+  height: 26px;
+  cursor: pointer;
+}
+.rectangleParent16,
+.rectangleParent17 {
+  position: absolute;
+  top: 420px;
+  left: 25px;
+  width: 67px;
+  height: 26px;
+}
+.rectangleParent17 {
+  left: 98px;
+}
+.rectangleParent18,
+.rectangleParent19,
+.rectangleParent20,
+.rectangleParent21 {
+  position: absolute;
+  top: 453px;
+  left: 25px;
+  width: 67px;
+  height: 26px;
+  cursor: pointer;
+}
+.rectangleParent19,
+.rectangleParent20,
+.rectangleParent21 {
+  left: 98px;
+}
+.rectangleParent20,
+.rectangleParent21 {
+  top: 387px;
+  left: 25px;
+}
+.rectangleParent21 {
+  left: 98px;
+}
+.groupChild23 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-darkslateblue);
+  border: 2px solid var(--color-darkslateblue);
+  box-sizing: border-box;
+  width: 116px;
+  height: 34px;
+}
+.applyFilters {
+  position: absolute;
+  top: 8px;
+  left: 19px;
+}
+.groupChild24,
+.rectangleParent22 {
+  position: absolute;
+  width: 116px;
+  height: 34px;
+}
+.rectangleParent22 {
+  top: 748px;
+  left: 34px;
+  font-size: var(--font-size-sm);
+  color: var(--color-white);
+}
+.groupChild24 {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  border: 1.5px solid var(--color-darkslateblue);
+  box-sizing: border-box;
+}
+.rectangleParent,
+.rectangleParent23 {
+  position: absolute;
+  top: 709px;
+  left: 34px;
+  width: 116px;
+  height: 34px;
+  font-size: var(--font-size-sm);
+} 
+.rectangleParent {
+  top: 0;
+  left: 0;
+  width: 187px;
+  height: 800px;
+  font-size: var(--font-size-smi);
+}
+.searchFilter {
+  position: relative;
+  border-radius: 30px;
+  background-color: var(--color-white);
+  border: 10px solid var(--color-black);
+  box-sizing: border-box;
+  width: 100%;
+  height: 820px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-darkslateblue);
+  font-family: var(--font-lato);
+} 
+
+.active {
+  background-color: var(--color-darkslateblue);
+} 
 
   
