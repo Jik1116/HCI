@@ -1,0 +1,140 @@
+.favorites {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 60.5px);
+    font-weight: 600;
+  }
+  .favoritesWrapper {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 75.5px);
+    width: 121px;
+    height: 36px;
+  }
+  .vectorIcon {
+    position: absolute;
+    height: 72.22%;
+    width: 17.87%;
+    top: 13.89%;
+    right: -0.66%;
+    bottom: 13.89%;
+    left: 82.78%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .groupParent {
+    position: absolute;
+    top: 48px;
+    left: calc(50% - 85px);
+    width: 151px;
+    height: 36px;
+    font-size: 30px;
+  }
+  .collections,
+  .saved {
+    position: relative;
+  }
+  .saved {
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .collectionsParent {
+    position: absolute;
+    top: 137px;
+    left: calc(50% - 135.5px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 99px;
+  }
+  .home,
+  .homeIcon {
+    position: absolute;
+  }
+  .home {
+    top: 30px;
+    left: 0;
+    font-weight: 300;
+  }
+  .homeIcon {
+    height: 64.29%;
+    width: 96.3%;
+    top: -2.38%;
+    right: 0;
+    bottom: 38.1%;
+    left: 3.7%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .homeParent {
+    position: absolute;
+    top: 56px;
+    left: 24px;
+    width: 27px;
+    height: 42px;
+    cursor: pointer;
+    font-size: 10px;
+  }
+  .groupChild {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 121.5px);
+    border-radius: 20px;
+    background-color: var(--color-darkslateblue);
+    width: 243px;
+    height: 69px;
+  }
+  .createCollection {
+    position: absolute;
+    top: 0;
+    left: 32px;
+    font-weight: 600;
+  }
+  .groupItem {
+    position: absolute;
+    height: 109.62%;
+    width: 15.32%;
+    top: 0;
+    right: 84.68%;
+    bottom: -9.62%;
+    left: 0;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .createCollectionParent {
+    position: absolute;
+    top: 23px;
+    left: 28px;
+    width: 186px;
+    height: 26px;
+  }
+  .rectangleParent {
+    position: absolute;
+    top: 696px;
+    left: calc(50% - 131px);
+    width: 243px;
+    height: 69px;
+    cursor: pointer;
+    color: var(--color-white);
+  }
+  .favCollections {
+    position: relative;
+    border-radius: 30px;
+    background-color: var(--color-white);
+    border: 10px solid #000;
+    box-sizing: border-box;
+    width: 100%;
+    height: 820px;
+    overflow: hidden;
+    text-align: center;
+    font-size: var(--font-size-xl);
+    color: var(--color-darkslateblue);
+    font-family: var(--font-lato);
+  }
+  
+
+  

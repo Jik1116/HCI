@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
-import styles from "./index.module.css";
+import styles from "./index.module.css"; 
+import Link from 'next/link';
 
 const HomePage = () => {
   const [pictures, setPictures] = useState([]); 
@@ -8,7 +9,33 @@ const HomePage = () => {
     "type of clothing": null,
     "occasion": null,
     "geography": null,
-  });
+  }); 
+  const [selectedPicture, setSelectedPicture] = useState(null);
+  const [selectedPictureDescription, setSelectedPictureDescription] = useState(''); 
+
+  // Function to handle picture click and fetch description from the backend
+  const onPictureClick = async (picture) => {
+    // Assuming you have an API endpoint to fetch the description based on picture ID
+    const descriptionEndpoint = `/api/pictures/${picture.id}/description`;
+    try {
+      const response = await fetch(descriptionEndpoint);
+      const data = await response.json();
+      setSelectedPicture(picture.url);
+      setSelectedPictureDescription(data.description);
+      setShowFilterPopup(true);
+    } catch (error) {
+      console.error('Error fetching picture description:', error);
+      // Handle error if description cannot be fetched
+    }
+  }; 
+
+  // Function to handle the back button click and close the popup
+  const onBackButtonClick = () => {
+    setSelectedPicture(null);
+    setSelectedPictureDescription('');
+    setShowFilterPopup(false);
+  };
+
 
   const onItemClick = useCallback((category, item) => {
     setSelectedItems((prevSelectedItems) => {
@@ -22,7 +49,16 @@ const HomePage = () => {
 
   useEffect(() => {
     console.log("Selected Items:", selectedItems);
-  }, [selectedItems]);
+  }, [selectedItems]); 
+
+  const resetFilters = () => {
+    // Function to reset all filters
+    setSelectedItems({
+      "type of clothing": null,
+      "occasion": null,
+      "geography": null,
+    });
+  };
 
 
 
@@ -47,8 +83,13 @@ const HomePage = () => {
   }, []); 
   
   const toggleFilterPopup = () => {
-    // Step 2: Function to toggle the filter pop-up state
+    // Function to toggle the filter pop-up state when the filter icon is clicked
     setShowFilterPopup((prevValue) => !prevValue);
+  }; 
+
+  const onApplyFilters = () => {
+    // Function to close the filter pop-up when "Apply Filters" is clicked
+    setShowFilterPopup(false);
   };
 
   return (
@@ -61,22 +102,42 @@ const HomePage = () => {
           <div className={styles.latest}>Latest</div>
           <img className={styles.vectorIcon} alt="" src="/latesticon.jpg" />
         </div>
-        <div className={styles.favoritesContainer}>
-          <img className={styles.favoritesIcon} src="/favoritesicon.jpg" alt="Favorites" />
-        </div>
+        <Link href="/12_favorites">
+          <div className={styles.favoritesContainer}>
+            <img className={styles.favoritesIcon} src="/favoritesicon.jpg" alt="Favorites" />
+          </div>
+        </Link> 
       </div> 
 
       <div className={styles.scrollableGallery}>
         <div className={styles.pictureGallery}>
           {pictures.map((picture) => (
-            <div key={picture.id} className={styles.pictureItem}>
+            <div key={picture.id} className={styles.pictureItem} onClick={() => onPictureClick(picture)}> 
               <img key={picture.id} src={picture.url} alt={`Picture ${picture.id}`} />
             </div>
           ))}
         </div>
       </div> 
 
-      {/* Step 3: Render the filter pop-up based on the showFilterPopup state */}
+      {/* Popup to display the enlarged image and description */}
+      {showFilterPopup && (
+        <div className={styles.popupContainer}>
+          <div className={styles.popupContent}>
+            {/* Back button at the top left corner */}
+            <div className={styles.backButton} onClick={onBackButtonClick}> 
+              <img className={styles.backIcon} src="/backarrow.png" alt="Back" /> 
+            </div> 
+            <div className={styles.enlargedImageContainer}>
+              <img className={styles.enlargedImage} src={selectedPicture} alt="Enlarged" />
+            </div>
+            <div className={styles.descriptionContainer}>
+              <p>{selectedPictureDescription}</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Render the filter pop-up based on the showFilterPopup state */}
       {showFilterPopup && (
         <div className={styles.filterPopup}>
           <div className={styles.occasion}>Occasion</div>
@@ -186,11 +247,11 @@ const HomePage = () => {
 
             <div className={styles.rectangleParent22}> 
               <div className={styles.groupChild23} /> 
-              <div className={styles.applyFilters}>Apply Filters</div> 
+              <div className={styles.applyFilters} onClick={onApplyFilters}>Apply Filters</div> 
             </div> 
             <div className={styles.rectangleParent23}>
               <div className={styles.groupChild24} /> 
-              <div className={styles.applyFilters}>Reset Filters</div> 
+              <div className={styles.applyFilters} onClick={resetFilters}>Reset Filters</div> 
             </div> 
           </div> 
           <div className={styles.occasion}>Occasion</div>
