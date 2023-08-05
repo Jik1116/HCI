@@ -11,14 +11,22 @@ body {
   --font-roboto: Roboto;
 
   /* font sizes */
-  --font-size-lg: 18px;
+  --font-size-lg: 18px; 
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-smi: 13px;
   --font-size-3xs: 10px;
 
   /* Colors */
-  --color-white: #fff;
-  --color-darkslateblue: #5f4b98;
+  --color-white: #fff; 
+  --color-black: #000;
+  --color-darkslateblue: #5f4b98; 
   --color-steelblue: #8c7db7;
 
   /* border radiuses */
-  --br-3xs: 10px;
-}
+  --br-3xs: 10px; 
+  --br-8xs: 5px;
+  --br-10xs: 3px;
+} 
+
+
