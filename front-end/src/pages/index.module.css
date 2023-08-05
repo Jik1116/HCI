@@ -115,9 +115,9 @@
 .filterPopup {
   display: none; /* Hide the container by default */
   position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
   width: 75%; /* Cover 3/4 of the page horizontally */
   max-width: 750px; /* Limit the maximum width of the pop-up container */
   margin: 0 auto; /* Center the pop-up horizontally */
@@ -146,13 +146,32 @@
   position: absolute;
   top: 0;
   left: 0;
-}
+} 
+
+
+
 .groupChild {
-  background-color: var(--color-white);
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  width: 75%;
+  max-width: 750px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 10px solid var(--color-black); /* Black border */
+  box-sizing: border-box; 
   box-shadow: 30px 4px 30px rgba(0, 0, 0, 0.25);
-  width: 187px;
-  height: 800px;
-}
+  font-family: var(--font-lato);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+
+
+
 .groupItem {
   border-radius: var(--br-10xs);
   border: 1px solid var(--color-darkslateblue);
