@@ -17,7 +17,6 @@ const LogInScreen = () => {
     // Please sync "sign up page" to the project
   }, []);
 
-  //Need to add ERROR HANDELING
   const onLoginClick = useCallback(async () => {
     try {
       // Use the 'email' and 'password' variables for login logic or API calls
@@ -25,15 +24,13 @@ const LogInScreen = () => {
       console.log('Password:', password);
       console.log(auth)
       await signInWithEmailAndPassword(auth, email, password);
-      //Add error message
 
       // User has successfully signed in
       // You can redirect the user to the dashboard or another page here
       router.push('/11_homepage');
     } catch (error) {
-      alert("ERROR SINGING: MY VOICE IS GREAT!")
+      alert("ERROR SIGNING IN: " + error.message);
       console.error('Error signing in:', error.message);
-      // Handle sign-in errors (e.g., invalid credentials, network issues, etc.)
     }
   }, [email, password, router]);
 
@@ -59,7 +56,7 @@ const LogInScreen = () => {
         <div
           className={styles.passwordFieldFrame}
         >
-          <img className={styles.vectorIcon} alt="" src="/vector.svg" />
+          {/* <img className={styles.vectorIcon} alt="" src="/vector.svg" /> */}
           <input
             className={styles.email}
             type="password"
@@ -67,6 +64,7 @@ const LogInScreen = () => {
             placeholder="Enter your password"
           />
         </div>
+
         <div className={styles.forgotYourPassword}>Forgot Your Password?</div>
         <div className={styles.dontHaveAnContainer} onClick={onDontHaveAnClick}>
           {`Don’t have an account yet? Create one `}
