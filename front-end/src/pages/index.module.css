@@ -122,8 +122,7 @@
   max-width: 750px; /* Limit the maximum width of the pop-up container */
   margin: 0 auto; /* Center the pop-up horizontally */
   background-color: rgba(255, 255, 255, 0.9);
-  border: 10px solid var(--color-black); /* Black border */
-  box-sizing: border-box;
+  
   font-family: var(--font-lato);
 
   /* Center the pop-up vertically */
@@ -160,8 +159,6 @@
   max-width: 750px;
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.9);
-  border: 10px solid var(--color-black); /* Black border */
-  box-sizing: border-box; 
   box-shadow: 30px 4px 30px rgba(0, 0, 0, 0.25);
   font-family: var(--font-lato);
 
