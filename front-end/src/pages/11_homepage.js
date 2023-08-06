@@ -38,7 +38,6 @@ const HomePage = () => {
       "occasion": null,
       "geography": null,
     });
-
     fetchAllImages();
   };
 
