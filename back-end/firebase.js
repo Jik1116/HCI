@@ -1,12 +1,12 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getStorage } from "firebase/storage";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
 const firebaseConfig = {
   apiKey: "AIzaSyAdiDavMCbaDUpBRvrTJjqeUXoj_VDxg-0",
   authDomain: "sparkstyle.firebaseapp.com",
+  databaseURL: "https://sparkstyle-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "sparkstyle",
   storageBucket: "sparkstyle.appspot.com",
   messagingSenderId: "789876522013",
@@ -17,5 +17,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
+const storage = getStorage();
 
-export {firebaseApp, auth}
+export { firebaseApp, auth, storage};
