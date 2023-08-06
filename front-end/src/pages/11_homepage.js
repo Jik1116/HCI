@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import styles from "./11_homepage.module.css";
 import Link from 'next/link';
-import { ref, getDownloadURL,getStorage, getMetadata } from "firebase/storage";
+import { ref, getDownloadURL,getStorage, getMetadata, listAll } from "firebase/storage";
 import { initializeApp } from "firebase/app";
 
 
@@ -20,18 +20,40 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 
 const HomePage = () => {
-  const storage = getStorage()
+  const storage = getStorage();
   const [pictures, setPictures] = useState([]);
   const [showFilterPopup, setShowFilterPopup] = useState(false);
   const [selectedItems, setSelectedItems] = useState({
-    "type of clothing": null,
+    "typeOfClothing": null,
     "occasion": null,
     "geography": null,
   });
-  const [selectedPicture, setSelectedPicture] = useState(null);
+    const [selectedPicture, setSelectedPicture] = useState(null);
   const [selectedPictureDescription, setSelectedPictureDescription] = useState('');
 
-  // Function to handle picture click and fetch description from the backend
+  const resetFilters = () => {
+    // Function to reset all filters
+    setSelectedItems({
+      "typeOfClothing": null,
+      "occasion": null,
+      "geography": null,
+    });
+
+    fetchAllImages();
+  };
+
+  const onItemClick = useCallback((category, item) => {
+    setSelectedItems((prevSelectedItems) => {
+      // Toggle selection: If the item is already selected, set it to null; otherwise, set it to the clicked item
+      const newItemValue = prevSelectedItems[category] === item ? null : item;
+
+      // Return the updated state
+      return { ...prevSelectedItems, [category]: newItemValue };
+    });
+  }, []);
+
+
+  // Function to handle picture click and fetch metadata from the backend
   const onPictureClick = async (picture) => {
     try {
       const imageRef = ref(storage, picture.url);
@@ -52,36 +74,83 @@ const HomePage = () => {
     setShowFilterPopup(false);
   };
 
+  const fetchAllImages = async () => {
+    try {
+      const bucketRef = ref(storage);
+      const items = await listAll(bucketRef);
 
-  const onItemClick = useCallback((category, item) => {
-    setSelectedItems((prevSelectedItems) => {
-      // Toggle selection: If the item is already selected, set it to null; otherwise, set it to the clicked item
-      const newItemValue = prevSelectedItems[category] === item ? null : item;
+      const imagePromises = items.prefixes.map(async (folder) => {
+        const folderItems = await listAll(ref(storage, folder.fullPath));
+        return Promise.all(
+          folderItems.items.map(async (item) => {
+            const imageUrl = await getDownloadURL(item);
+            const metadata = await getMetadata(item);
+            return { url: imageUrl, metadata: metadata };
+          })
+        );
+      });
 
-      // Return the updated state
-      return { ...prevSelectedItems, [category]: newItemValue };
-    });
-  }, []);
+      const images = await Promise.all(imagePromises);
+      const flattenedImages = images.flat();
 
-  useEffect(() => {
-    console.log("Selected Items:", selectedItems);
-  }, [selectedItems]);
-
-  const resetFilters = () => {
-    // Function to reset all filters
-    setSelectedItems({
-      "type of clothing": null,
-      "occasion": null,
-      "geography": null,
-    });
+      // Set the state with all the pictures
+      setPictures(flattenedImages);
+    } catch (error) {
+      console.error("Error fetching images from Firebase Storage:", error);
+      // Handle error if images cannot be fetched
+      // You can display an error message to the user or perform other actions
+    }
   };
 
-  // Function to download an image from Firebase Storage using URL
-  async function downloadImage(imageUrl, imageId) {
+  const imageMatchesFilter = (imageMetadata) => {
+    const { typeOfClothing, occasion, geography } = selectedItems;
+    const metadataOutfit = (imageMetadata.customMetadata.outfit || "").toLowerCase();
+    const metadataOccasion = (imageMetadata.customMetadata.occasion || "").toLowerCase();
+    const metadataRegion = (imageMetadata.customMetadata.region || "").toLowerCase();
+
+    const selectedOutfit = typeOfClothing ? typeOfClothing.toLowerCase() : null;
+    const selectedOccasion = occasion ? occasion.toLowerCase() : null;
+    const selectedRegion = geography ? geography.toLowerCase() : null;
+
+    console.log(metadataOutfit,metadataOccasion, metadataRegion)
+    console.log(selectedOutfit,selectedOccasion, selectedRegion)
+
+    if (
+      (selectedOutfit === null || metadataOutfit === selectedOutfit) &&
+      (selectedOccasion === null || metadataOccasion === selectedOccasion) &&
+      (selectedRegion === null || metadataRegion === selectedRegion)
+    ) {
+      return true;
+    }
+    return false;
+  };
+
+  // Function to filter images based on the selected filter criteria
+  const filterImages = (images) => {
+    if (!selectedItems.typeOfClothing && !selectedItems.occasion && !selectedItems.geography) {
+      return images; // If no filters are selected, return all images
+    }
+
+    const filteredImages = images.filter((image) => {
+      const imageMetadata = image.metadata;
+      const matchesFilter = imageMatchesFilter(imageMetadata);
+      console.log(
+        `Image ${image.id} Matches Filter: ${matchesFilter}. Metadata:`,
+        imageMetadata.customData
+      );
+      return matchesFilter;
+    });
+
+    return filteredImages;
+  };
+
+  // Function to download an image from Firebase Storage using URL and metadata
+  async function downloadImageWithMetadata(imageUrl, imageId) {
     try {
       const imageRef = ref(storage, imageUrl);
       const url = await getDownloadURL(imageRef);
-      return { id: imageId, url: url };
+      const metadata = await getMetadata(imageRef);
+      return { id: imageId, url: url, metadata: metadata };
     } catch (error) {
       console.error(`Error downloading image ${imageId}:`, error);
       return null;
@@ -89,41 +158,24 @@ const HomePage = () => {
   }
 
   useEffect(() => {
-    // Fetch pictures from the backend here and update the state with the data
-    // For example:
-    // const fetchedPicturesFromBackend = await fetchPicturesFromBackend();
-    // setPictures(fetchedPicturesFromBackend);
+    const storage = getStorage();
 
-    // Replace the code below for pictures zone to zeight after pictures are fetched from backend
-    const imageUrls = [
-      { id: 1, url: "images/image_03.png" },
-      { id: 2, url: "images/image_15.png" },
-      { id: 3, url: "images/image_11.png" },
-      { id: 4, url: "images/image_12.png" },
-      { id: 5, url: "images/image_13.png" },
-      { id: 6, url: "images/image_17.png" },
-      { id: 7, url: "images/image_23.png" },
-      { id: 8, url: "images/image_27.png" },
-    ];
-
-    const fetchPictures = async () => {
-      const fetchedPictures = await Promise.all(
-        imageUrls.map(({ id, url }) => downloadImage(url, id))
-      );
-      setPictures(fetchedPictures.filter((picture) => picture !== null));
-    };
-
-    fetchPictures();
+    fetchAllImages();
   }, []);
 
+  // Function to toggle the filter pop-up
   const toggleFilterPopup = () => {
-    // Function to toggle the filter pop-up state when the filter icon is clicked
     setShowFilterPopup((prevValue) => !prevValue);
   };
 
   const onApplyFilters = () => {
-    // Function to close the filter pop-up when "Apply Filters" is clicked
+    // Function to close the filter pop-up and filter images based on the selected filter criteria
     setShowFilterPopup(false);
+
+    // Filter the images based on the selected filter criteria after Apply Filters is clicked
+    const filteredPictures = filterImages(pictures);
+    console.log("Filtered Pictures:", filteredPictures);
+    setPictures(filteredPictures);
   };
 
   return (
@@ -215,7 +267,7 @@ const HomePage = () => {
               <div className={styles.groupItem} />
               <div className={styles.tankTops}>Tank Tops</div>
             </div>
-            <div className={`${styles.rectangleParent7} ${selectedItems["type of clothing"] === "Dresses" ? styles.active : ""}`} onClick={() => onItemClick("type of clothing", "Dresses")}>
+            <div className={`${styles.rectangleParent7} ${selectedItems["type of clothing"] === "Dresses" ? styles.active : ""}`} onClick={() => onItemClick("type of clothing", "Dress")}>
               <div className={styles.groupItem} />
               <div className={styles.dresses}>Dresses</div>
             </div>
