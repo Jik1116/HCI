@@ -7,7 +7,7 @@ const OnboardingBodyShape = () => {
   const router = useRouter();
 
   const onNextButtonContainerClick = useCallback(() => {
-    router.push("/11_homepage");
+    router.push("3_confirmsignup");
   }, [router]);
 
   const onRectangleClick = useCallback(() => {

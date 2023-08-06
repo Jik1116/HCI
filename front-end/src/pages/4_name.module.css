@@ -26,8 +26,9 @@
   .enterYourResponse {
     position: relative;
     color: #8c7db7;
+
   }
-  
+
   .enterYourResponseHereWrapper {
     position: absolute;
     top: 50%; /* Set the top position to 50% */
@@ -42,10 +43,17 @@
     margin-top: 10px;
     align-items: center; /* Align items to center vertically */
   }
-  
+
+  .enterYourResponseHereWrapper::placeholder {
+    color: var(--color-darkslateblue);
+    font-family: var(--font-lato);
+    font-size: var(--font-size-lg);
+  }
+
+
   .responseBox {
     position: absolute;
-    top: 289px;
+    top: 40%;
     left: 50%; /* Set the left position to 50% */
     transform: translateX(-50%); /* This centers the element horizontally */
     width: 252px;
@@ -66,7 +74,7 @@
   display: grid;
 }
 
-  
+
   .whatIsYour {
     position: absolute;
     top: 234px;
@@ -79,14 +87,14 @@
     font-weight: 501;
     width: 300px;
   }
-  
+
   .purpleWaveIcon {
     margin-top: 0px;
     left: 0;
     width: 100%;
     height: 450px;
   }
-  
+
   .helpUsGet {
     position: absolute;
     top: 58px;
@@ -99,7 +107,7 @@
     font-size: 28px;
     font-weight: 500;
   }
-  
+
   .backButtonIcon {
     position: absolute;
     top: 70px;
@@ -108,7 +116,7 @@
     height: auto;
     cursor: pointer;
   }
-  
+
   .next {
     position: absolute;
     top: 0;
@@ -117,7 +125,7 @@
     font-size: 20px;
     color: #8c7db7;
   }
-  
+
   .nextButton {
     position: absolute;
     top: 4px;
@@ -133,7 +141,7 @@
     width: 15px;
     height: auto;
   }
-  
+
   .nextButton {
     top: 687px;
     left: 247px;
@@ -141,4 +149,3 @@
     height: 26px;
     font-size: var(--font-size-3xl);
   }
-  

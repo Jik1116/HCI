@@ -28,8 +28,7 @@ const OnboardingName = () => {
   return (
     <div className={styles.onboardingName}>
       <div className={styles.responseBox} onClick={onResponseBoxContainerClick}>
-      <div className={styles.enterYourResponseHereWrapper}>
-      <div
+        <div
           className={styles.enterYourResponse}
           onClick={clearNameText}
           onFocus={clearNameText}
@@ -39,14 +38,13 @@ const OnboardingName = () => {
             }
           }}
         >
-          <div
+          <input
             ref={nameRef}
-            contentEditable
-            onInput={(e) => setName(e.target.textContent.trim())}
-          >
-            {name ? name : "Enter Your Name"}
-          </div>
-          </div>
+            className={styles.enterYourResponseHereWrapper}
+            type={name ? name : "Enter Your Name"}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Name"
+          />
         </div>
       </div>
       <b className={styles.whatIsYour}>What is your name?</b>
@@ -64,7 +62,7 @@ const OnboardingName = () => {
           <div className={styles.next}>Next</div>
           <img className={styles.vectorIcon} alt="" src="/nextarrow.png" />
         </div>
-      
+
       </Link>
     </div>
   );

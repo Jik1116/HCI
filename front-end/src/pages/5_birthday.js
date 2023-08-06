@@ -1,4 +1,4 @@
-import { useCallback,useState,useRef } from "react";
+import { useCallback, useState, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router"; // Import the useRouter hook
 import styles from "./5_birthday.module.css";
@@ -28,26 +28,24 @@ const OnboardingBirthday = () => {
   return (
     <div className={styles.onboardingName}>
       <div className={styles.responseBox} onClick={onResponseBoxContainerClick}>
-        <div className={styles.enterYourResponseHereWrapper}>
-      <div
-          className={styles.enterYourResponse}
-          onClick={clearBirthdayText}
-          onFocus={clearBirthdayText}
-          onBlur={() => {
-            if (!birthday) {
-              birthdayRef.current.textContent = "Enter Your Birthday";
-            }
-          }}
-        >
           <div
-            ref={birthdayRef}
-            contentEditable
-            onInput={(e) => setBirthday(e.target.textContent.trim())}
+            className={styles.enterYourResponse}
+            onClick={clearBirthdayText}
+            onFocus={clearBirthdayText}
+            onBlur={() => {
+              if (!birthday) {
+                birthdayRef.current.textContent = "Enter Your Birthday";
+              }
+            }}
           >
-            {birthday ? birthday : "Enter Your Birthday"}
+            <input
+              ref={birthdayRef}
+              className={styles.enterYourResponseHereWrapper}
+              type={birthday ? birthday : "Enter Your Birthday"}
+              onChange={(e) => setBirthday(e.target.value)}
+              placeholder="DD/MM/YYYY"
+            />
           </div>
-          </div>
-        </div>
       </div>
       <b className={styles.whatIsYour}>What is your birthday?</b>
       <img className={styles.purpleWaveIcon} alt="" src="/wave2.png" />
