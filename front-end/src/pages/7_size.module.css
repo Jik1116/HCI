@@ -71,15 +71,13 @@
     height: 26px;
     font-size: var(--font-size-3xl);
   }
-
-  .onboardingSizeChild,
   .onboardingSizeChild1,
+  .onboardingSizeChild,
   .onboardingSizeChild2,
   .onboardingSizeChild3,
   .onboardingSizeInner,
   .onboardingSizeItem,
-  .rectangleDiv,
-  .xxsXxsActiveState {
+  .rectangleDiv{
     position: absolute;
     top: 356px;
     left: 44px;
@@ -93,39 +91,32 @@
   }
 
   .onboardingSizeChild1,
-  .onboardingSizeChild2,
-  .onboardingSizeChild3,
-  .onboardingSizeInner,
-  .onboardingSizeItem,
-  .rectangleDiv {
+  .onboardingSizeItem{
     left: 193px;
   }
 
-  .onboardingSizeChild1,
-  .onboardingSizeChild2,
-  .onboardingSizeChild3,
+
   .onboardingSizeInner,
   .rectangleDiv {
     top: 414px;
     left: 44px;
   }
 
-  .onboardingSizeChild1,
-  .onboardingSizeChild2,
-  .onboardingSizeChild3,
   .rectangleDiv {
     left: 193px;
   }
 
   .onboardingSizeChild1,
-  .onboardingSizeChild2,
-  .onboardingSizeChild3 {
+  .onboardingSizeChild2{
     top: 471px;
     left: 44px;
   }
 
-  .onboardingSizeChild2,
-  .onboardingSizeChild3 {
+  .onboardingSizeChild1{
+    left: 193px;
+  }
+
+   .onboardingSizeChild1{
     left: 193px;
   }
 
@@ -152,13 +143,7 @@
     left: 96px;
   }
 
-  .s {
-    left: 92px;
-  }
 
-  .m {
-    left: 92px;
-  }
 
   .m,
   .s,
@@ -169,24 +154,21 @@
     left: 102px;
   }
 
-  .m,
-  .xl,
-  .xxlXxl {
+  .m{
     top: 540px;
     left: 99px;
   }
 
-  .xl,
-  .xxlXxl {
-    top: 427px;
-    left: 246px;
-  }
+
 
   .l {
     left: 248px;
   }
 
-  .xl {
+  
+
+  .xl{
+    top: 427px;
     left: 246px;
   }
   
@@ -195,6 +177,7 @@
     left: 212px;
   }
 
+
   .sizeChart {
     position: absolute;
     top: 552px;
@@ -202,18 +185,6 @@
     font-size: var(--font-size-base);
     text-decoration: underline;
     cursor: pointer;
-  }
-
-  .l,
-  .xs,
-  .s,
-  .m,
-  .l,
-  .xl,
-  .xxlXxl,
-  .sizeChart {
-    color: #5F4B98;
-    text-align: center;
   }
 
 
@@ -229,10 +200,16 @@
     font-family: var(--font-lato);
   }
   
-  .onboardingSizeChild.xxsXxsActiveState,
-  .onboardingSizeChild.xsActiveState,
-  .onboardingSizeChild.lActiveState {
-    color: #fff;
-    background-color: #5F4B98;
 
-  }
+   
+.onboardingSizeChild.xxsXxsActiveState,
+.onboardingSizeChild.active,
+.onboardingSizeChild1.active,
+.onboardingSizeChild2.active,
+.onboardingSizeChild3.active,
+.onboardingSizeInner.active,
+.onboardingSizeItem.active,
+.rectangleDiv.active {
+  color: #fff;
+  background-color: #5F4B98;
+}
