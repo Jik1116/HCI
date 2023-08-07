@@ -39,6 +39,7 @@ const HomePage = () => {
       "geography": null,
     });
     fetchAllImages();
+    setShowFilterPopup(false)
   };
 
   const onItemClick = useCallback((category, item) => {
